@@ -1,0 +1,15 @@
+﻿Patient ID,Comment,Has metastasis,Res: Has metastasis,First Primary Diagnosis,Res: First Primary Diagnosis,First Primary Histology,Res: First Primary Histology,Treatment Drugs,Res: Treatment Drugs,Test Results,Res: Test Results
+1,Binary Field: True Positive,TRUE,TRUE,,,,,,,,
+2,Binary Field: True Negative,FALSE,FALSE,,,,,,,,
+3,Binary Field: False Positive,FALSE,TRUE,,,,,,,,
+4,Binary Field: False Negative,TRUE,FALSE,,,,,,,,
+5,Single Field: Correct Extraction ,,,Colorectal Cancer,Colorectal Cancer,Adenocarcinoma,Adenocarcinoma,,,,
+6,Single Field: Incorrect Extraction,,,Colorectal Cancer,Gallbladder Cancer,Adenocarcinoma,Squamous cell carcinoma,,,,
+7,Single Field: Missing Extraction,,,Colorectal Cancer,-,Adenocarcinoma,-,,,,
+8,Single Field: Spurious Extraction,,,-,Colorectal Cancer,-,Adenocarcinoma,,,,
+9,Single Field: Correct Empty Extraction,,,-,-,-,-,,,,
+10,List Field: Correct Extraction ,,,,,,,['XELOX'],['XELOX'],['ER: Positive'],['ER: Positive']
+11,List Field: Spurious Extraction,,,,,,,[],['XELOX'],[],['ER: Positive']
+12,List Field: Missing Extraction,,,,,,,['XELOX'],[],['ER: Positive'],[]
+13,List Field: Correct Empty Extraction,,,,,,,[],[],[],[]
+14,List Field: Mixed Extraction,,,,,,,"['Docetaxel', 'Gemcitabine']","['Docetaxel', 'XELOX']","['ER: Positive', 'HER2: Positive', 'PR: Negative']","['ER: Positive', 'HER2: Positive', 'TMB: Low', 'KRAS: G12A']"

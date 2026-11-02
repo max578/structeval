@@ -1,0 +1,23 @@
+# R
+.Rhistory
+.RData
+.Rproj.user
+*.Rcheck/
+structeval-r/doc/
+structeval-r/Meta/
+structeval-r/inst/doc/
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+dist/
+build/
+
+# Operating system
+.DS_Store
+
+# Working notes never enter shared history
+PROJECT_LOG*.md
+aa_notes*

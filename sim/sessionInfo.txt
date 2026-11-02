@@ -1,0 +1,25 @@
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Tahoe 26.7.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_AU.UTF-8/en_AU.UTF-8/en_AU.UTF-8/C/en_AU.UTF-8/en_AU.UTF-8
+
+time zone: Australia/Adelaide
+tzcode source: internal
+
+attached base packages:
+[1] parallel  stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+[1] jsonlite_2.0.0   structeval_0.1.0
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.1      parallelly_1.48.0   tools_4.6.1        
+[4] listenv_1.0.0       codetools_0.2-20    data.table_1.18.6.1
+[7] digest_0.6.39       globals_0.19.1      future_1.75.0      

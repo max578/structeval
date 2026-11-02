@@ -1,0 +1,38 @@
+Package: structeval
+Title: Structure-Aware Evaluation of Extracted Clinical Fields
+Version: 0.1.0
+Authors@R:
+    person("Max", "Moldovan", , "max.moldovan@adelaide.edu.au", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0001-9680-8474"))
+Description: Scores structured fields extracted from clinical notes against
+    reference labels and reports precision, recall, F1, specificity and
+    accuracy with intervals matched to each field's structure. Binary and
+    scalar fields are note-level proportions and receive Wilson score
+    intervals (Wilson 1927 <doi:10.1080/01621459.1927.10502953>). List fields
+    yield ratios of note-level sums and receive a note-level cluster
+    bootstrap with bias-corrected and accelerated percentiles (Efron 1987
+    <doi:10.1080/01621459.1987.10478410>) or a cluster-robust delta
+    interval, with a stated rule at the boundary. Provides a threshold test,
+    paired comparison tests, an omission-versus-commission asymmetry test,
+    closed-form sample-size planners and Monte Carlo power from a generative
+    model of clustered extraction errors.
+License: MIT + file LICENSE
+URL: https://github.com/max578/structeval
+BugReports: https://github.com/max578/structeval/issues
+Encoding: UTF-8
+Depends:
+    R (>= 4.0.0)
+Imports:
+    stats,
+    utils
+Suggests:
+    ggplot2,
+    jsonlite,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Config/rpkg/style: rosci-lean
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0

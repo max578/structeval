@@ -1,0 +1,61 @@
+Patient ID,Has metastasis,Res: Has metastasis,First Primary Diagnosis,Res: First Primary Diagnosis,First Primary Histology,Res: First Primary Histology,Treatment Drugs,Res: Treatment Drugs,Radiotherapy Sites,Res: Radiotherapy Sites
+1,TRUE,TRUE,Colorectal Cancer,Colorectal Cancer,Adenocarcinoma,ADENOCARCINOMA,['XELOX'],['XELOX'],[],[]
+2,TRUE,FALSE,Colorectal Cancer,colorectal cancer,Adenocarcinoma,Squamous cell carcinoma,"['Docetaxel', 'Gemcitabine']","['gemcitabine', 'DOCETAXEL']",-,[]
+3,FALSE,TRUE,"  Breast Cancer ",Breast Cancer,-,-,['XELOX'],"['XELOX', 'xelox']",,-
+4,FALSE,FALSE,Breast Cancer,Lung Cancer,Squamous cell carcinoma,-,"['Docetaxel', 'Gemcitabine']","['Docetaxel', 'XELOX']",-,-
+5,,TRUE,Lung Cancer,-,-,Adenocarcinoma,[],[],[],[]
+6,TRUE,,-,Lung Cancer,,,[],['Cisplatin'],-,[]
+7,FALSE,,-,-,Small cell carcinoma,Small cell carcinoma,['Cisplatin'],[],,-
+8,TRUE,-,,Lung Cancer,Squamous cell carcinoma,Squamous cell carcinoma,-,['Cisplatin'],-,-
+9,TRUE,TRUE,Gastric Cancer,,Adenocarcinoma,Adenocarcinoma,,['Cisplatin'],[],[]
+10,TRUE,TRUE,Colorectal Cancer,Colorectal Cancer,Small cell carcinoma,Small cell carcinoma,"['Oxaliplatin', 'Bevacizumab']",,-,[]
+11,FALSE,FALSE,-,-,Small cell carcinoma,Small cell carcinoma,[' Oxaliplatin '],['Oxaliplatin'],,-
+12,FALSE,FALSE,Lung Cancer,Lung Cancer,Adenocarcinoma,Small cell carcinoma,"['Pembrolizumab', 'Carboplatin', 'Pemetrexed']","['Pembrolizumab', 'Carboplatin', 'Pemetrexed', 'Nivolumab']",-,-
+13,TRUE,TRUE,Lung Cancer,Lung Cancer,-,-,['Bevacizumab'],[],[],[]
+14,FALSE,FALSE,Lung Cancer,Lung Cancer,-,-,['Oxaliplatin'],"['Oxaliplatin', 'Gemcitabine']",-,[]
+15,FALSE,FALSE,Breast Cancer,Breast Cancer,Squamous cell carcinoma,Squamous cell carcinoma,['Pembrolizumab'],['XELOX'],,-
+16,TRUE,TRUE,Colorectal Cancer,Breast Cancer,Squamous cell carcinoma,Squamous cell carcinoma,"['Carboplatin', 'Cisplatin']","['Carboplatin', 'Cisplatin']",-,-
+17,TRUE,FALSE,Lung Cancer,Lung Cancer,Adenocarcinoma,Adenocarcinoma,"['Cisplatin', 'Docetaxel', 'Gemcitabine']","['Cisplatin', 'Gemcitabine', 'XELOX']",[],[]
+18,FALSE,FALSE,-,-,Squamous cell carcinoma,Squamous cell carcinoma,"['Pembrolizumab', 'Bevacizumab']","['Pembrolizumab', 'Bevacizumab', 'Oxaliplatin']",-,[]
+19,TRUE,TRUE,-,Lung Cancer,-,-,"['Bevacizumab', 'Carboplatin']","['Bevacizumab', 'Carboplatin']",,-
+20,TRUE,TRUE,Colorectal Cancer,Colorectal Cancer,Squamous cell carcinoma,Squamous cell carcinoma,[],[],-,-
+21,TRUE,TRUE,Gastric Cancer,Gastric Cancer,-,-,[],[],[],[]
+22,FALSE,FALSE,Gastric Cancer,Gastric Cancer,-,-,['XELOX'],['XELOX'],-,[]
+23,FALSE,FALSE,Colorectal Cancer,Colorectal Cancer,Squamous cell carcinoma,Squamous cell carcinoma,"['Pembrolizumab', 'Carboplatin']","['Pembrolizumab', 'Carboplatin']",,-
+24,TRUE,TRUE,Lung Cancer,Lung Cancer,Small cell carcinoma,Small cell carcinoma,[],['XELOX'],-,-
+25,FALSE,FALSE,-,Gastric Cancer,Adenocarcinoma,Adenocarcinoma,[],[],[],[]
+26,TRUE,FALSE,Colorectal Cancer,Colorectal Cancer,Small cell carcinoma,Small cell carcinoma,['Cisplatin'],['Carboplatin'],-,[]
+27,TRUE,FALSE,Gastric Cancer,Gastric Cancer,Adenocarcinoma,Small cell carcinoma,"['Cisplatin', 'Gemcitabine', 'Bevacizumab']","['Cisplatin', 'Bevacizumab']",,-
+28,TRUE,TRUE,Gastric Cancer,Gastric Cancer,Adenocarcinoma,Small cell carcinoma,"['Carboplatin', 'Oxaliplatin', 'Docetaxel', 'Pembrolizumab']","['Carboplatin', 'Oxaliplatin', 'Docetaxel']",-,-
+29,FALSE,FALSE,Breast Cancer,Breast Cancer,-,-,"['Pembrolizumab', 'Gemcitabine']","['Pembrolizumab', 'Gemcitabine']",[],[]
+30,TRUE,TRUE,Gastric Cancer,Gastric Cancer,Small cell carcinoma,Small cell carcinoma,[],['Bevacizumab'],-,[]
+31,FALSE,FALSE,Lung Cancer,Gastric Cancer,Adenocarcinoma,Small cell carcinoma,['Docetaxel'],[],,-
+32,FALSE,FALSE,Colorectal Cancer,Colorectal Cancer,-,-,"['Oxaliplatin', 'Gemcitabine']","['Gemcitabine', 'Carboplatin']",-,-
+33,TRUE,FALSE,Lung Cancer,Lung Cancer,Adenocarcinoma,-,"['Pembrolizumab', 'Cisplatin']","['Pembrolizumab', 'Cisplatin']",[],[]
+34,FALSE,TRUE,Lung Cancer,Gastric Cancer,Adenocarcinoma,Adenocarcinoma,"['Gemcitabine', 'Oxaliplatin', 'Docetaxel', 'XELOX']","['Gemcitabine', 'Oxaliplatin', 'XELOX', 'Docetaxel']",-,[]
+35,FALSE,FALSE,Colorectal Cancer,Colorectal Cancer,Small cell carcinoma,-,[],[],,-
+36,TRUE,TRUE,Lung Cancer,Lung Cancer,Small cell carcinoma,-,"['Gemcitabine', 'Pembrolizumab', 'Cisplatin', 'Oxaliplatin']","['Gemcitabine', 'Pembrolizumab', 'Cisplatin', 'Oxaliplatin', 'Bevacizumab']",-,-
+37,FALSE,FALSE,Colorectal Cancer,Lung Cancer,-,-,['Gemcitabine'],"['Gemcitabine', 'Cisplatin']",[],[]
+38,TRUE,TRUE,Colorectal Cancer,Colorectal Cancer,Adenocarcinoma,Adenocarcinoma,[],['Docetaxel'],-,[]
+39,TRUE,TRUE,Breast Cancer,Breast Cancer,Adenocarcinoma,Squamous cell carcinoma,"['Pembrolizumab', 'Bevacizumab']","['Pembrolizumab', 'Bevacizumab']",,-
+40,FALSE,FALSE,Gastric Cancer,Breast Cancer,-,-,['Carboplatin'],['Carboplatin'],-,-
+41,FALSE,FALSE,Colorectal Cancer,Colorectal Cancer,Squamous cell carcinoma,Small cell carcinoma,"['Bevacizumab', 'Pembrolizumab']",['Pembrolizumab'],[],[]
+42,TRUE,FALSE,Gastric Cancer,Gastric Cancer,Small cell carcinoma,Squamous cell carcinoma,[],[],-,[]
+43,FALSE,FALSE,Lung Cancer,-,Adenocarcinoma,Adenocarcinoma,"['Docetaxel', 'XELOX', 'Carboplatin']","['XELOX', 'Carboplatin']",,-
+44,TRUE,TRUE,Gastric Cancer,Gastric Cancer,Squamous cell carcinoma,Small cell carcinoma,['Docetaxel'],['Oxaliplatin'],-,-
+45,TRUE,TRUE,-,-,Small cell carcinoma,Small cell carcinoma,['Bevacizumab'],['Bevacizumab'],[],[]
+46,TRUE,TRUE,Gastric Cancer,Gastric Cancer,Squamous cell carcinoma,Squamous cell carcinoma,"['Pembrolizumab', 'Bevacizumab']",['Pembrolizumab'],-,[]
+47,TRUE,TRUE,Gastric Cancer,Gastric Cancer,-,-,['Carboplatin'],['Carboplatin'],,-
+48,FALSE,TRUE,Lung Cancer,Lung Cancer,-,-,['Bevacizumab'],"['Bevacizumab', 'XELOX']",-,-
+49,FALSE,TRUE,-,Breast Cancer,Small cell carcinoma,Small cell carcinoma,['Cisplatin'],['Cisplatin'],[],[]
+50,FALSE,TRUE,Breast Cancer,Breast Cancer,-,-,"['Docetaxel', 'Pembrolizumab']","['Docetaxel', 'Pembrolizumab']",-,[]
+51,TRUE,TRUE,Colorectal Cancer,Breast Cancer,-,Adenocarcinoma,"['Oxaliplatin', 'Carboplatin', 'Bevacizumab', 'Pembrolizumab', 'XELOX']","['Oxaliplatin', 'Bevacizumab', 'Pembrolizumab', 'XELOX']",,-
+52,FALSE,FALSE,Lung Cancer,Gastric Cancer,Small cell carcinoma,-,"['Cisplatin', 'Bevacizumab']","['Cisplatin', 'Bevacizumab']",-,-
+53,TRUE,TRUE,Gastric Cancer,Gastric Cancer,Squamous cell carcinoma,-,"['Pembrolizumab', 'Gemcitabine']",['Pembrolizumab'],[],[]
+54,TRUE,TRUE,-,-,Small cell carcinoma,Small cell carcinoma,"['Cisplatin', 'Bevacizumab']","['Cisplatin', 'Bevacizumab', 'Gemcitabine']",-,[]
+55,TRUE,TRUE,Colorectal Cancer,Colorectal Cancer,Adenocarcinoma,Adenocarcinoma,"['Carboplatin', 'Gemcitabine']","['Gemcitabine', 'Cisplatin']",,-
+56,FALSE,FALSE,Gastric Cancer,Gastric Cancer,Small cell carcinoma,Small cell carcinoma,['Cisplatin'],['Cisplatin'],-,-
+57,TRUE,TRUE,-,-,Squamous cell carcinoma,Squamous cell carcinoma,"['Docetaxel', 'Pembrolizumab']",['Pembrolizumab'],[],[]
+58,FALSE,FALSE,Colorectal Cancer,Colorectal Cancer,Small cell carcinoma,Small cell carcinoma,"['Gemcitabine', 'XELOX', 'Pembrolizumab']","['Gemcitabine', 'XELOX', 'Pembrolizumab']",-,[]
+59,TRUE,TRUE,Lung Cancer,Lung Cancer,Adenocarcinoma,Adenocarcinoma,"['Gemcitabine', 'Cisplatin']","['Gemcitabine', 'Cisplatin']",,-
+60,TRUE,TRUE,-,Gastric Cancer,Small cell carcinoma,Small cell carcinoma,"['Oxaliplatin', 'XELOX', 'Carboplatin']","['Oxaliplatin', 'XELOX', 'Carboplatin']",-,-

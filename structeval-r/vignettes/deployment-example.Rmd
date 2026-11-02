@@ -1,0 +1,240 @@
+---
+title: "Deployment example: oncology field extraction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Deployment example: oncology field extraction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+This vignette works through a deployed extraction system from its published
+counts. The source is Table 1 of Moldovan et al. (medRxiv
+2026.05.18.26353541, DOI 10.64898/2026.05.18.26353541). A language model
+extracted five fields from oncology notes. Three fields are scalar (one
+value per note) and two are lists (several items per note).
+
+```{r}
+library(structeval)
+```
+
+## Counts in
+
+Each row gives the pooled counts of correct (COR), incorrect (INC), missed
+(MIS) and spurious (SPU) items, and the true negatives (TN) where the paper
+reports them.
+
+```{r}
+table1 <- data.frame(
+  field = c(
+    "First Primary Diagnosis", "First Primary Histology",
+    "First Primary Overall Stage", "Treatment Drugs",
+    "Biomarker Test Results"
+  ),
+  type = c("scalar", "scalar", "scalar", "list", "list"),
+  cor = c(154, 124, 88, 352, 301),
+  inc = c(3, 5, 0, 0, 0),
+  mis = c(1, 1, 6, 40, 41),
+  spu = c(2, 0, 8, 55, 16),
+  tn = c(40, 70, 98, NA, NA)
+)
+table1
+```
+
+For a scalar field every note adds exactly one of the five outcomes. The
+counts therefore fix the per-note table, and the scalar rows can be expanded
+note by note without loss. The paper does not report per-note counts for
+the list fields. Here they are expanded to one item per row. That keeps
+every pooled sum, and it encodes the item independence that the naive
+interval assumes.
+
+```{r}
+expand <- function(row) {
+  outcome <- c("cor", "inc", "mis", "spu", "tn")
+  times <- unlist(row[outcome])
+  times[is.na(times)] <- 0
+  lab <- rep(outcome, times)
+  m <- vapply(outcome, function(o) as.integer(lab == o), integer(length(lab)))
+  data.frame(
+    note = as.character(seq_along(lab)), field = row$field, type = row$type,
+    m
+  )
+}
+counts <- do.call(rbind, lapply(seq_len(nrow(table1)), function(i) {
+  expand(table1[i, ])
+}))
+scalar_fields <- table1$field[1:3]
+list_fields <- table1$field[4:5]
+```
+
+## Table 1 reproduced
+
+Precision, recall, F1 and specificity are ratios of pooled counts. The
+values below match the published table to the printed 0.1 percent.
+
+```{r}
+est <- metrics(counts, metric = c("precision", "recall", "f1"),
+  method = "naive_wilson")
+spec <- metrics(counts, field = scalar_fields, metric = "specificity")
+point <- rbind(est, spec)[, c("field", "metric", "estimate")]
+point$percent <- round(100 * point$estimate, 1)
+point[order(point$field), c("field", "metric", "percent")]
+```
+
+## Intervals for the scalar fields
+
+Precision, recall and specificity of a scalar field are note-level
+proportions. Each note is one trial, so the Wilson score interval applies.
+The published intervals came from a note-level percentile bootstrap.
+
+```{r}
+published <- data.frame(
+  field = rep(scalar_fields, each = 4),
+  metric = rep(c("precision", "recall", "f1", "specificity"), 3),
+  published = c(
+    "94.1-99.4", "94.8-99.4", "94.7-99.1", "87.8-100",
+    "92.4-99.2", "91.4-98.5", "92.0-98.8", "100-100",
+    "85.7-96.8", "88.2-97.2", "88.4-96.2", "87.0-97.1"
+  )
+)
+sc <- metrics(counts, field = scalar_fields,
+  metric = c("precision", "recall", "f1", "specificity"), seed = 2026)
+sc$interval <- sprintf("%.1f-%.1f", 100 * sc$lower, 100 * sc$upper)
+merge(sc[, c("field", "metric", "method", "interval", "boundary")],
+  published, by = c("field", "metric"), sort = FALSE)
+```
+
+Histology specificity shows the boundary case. The paper reported 100
+(100-100), a zero-width interval from 70 of 70 notes. The Wilson interval
+on the same notes is 94.8 to 100. The scalar F1 is a ratio with note-level
+denominators of 0, 1 or 2, so the router gives it the cluster bootstrap with
+BCa percentiles.
+
+## Intervals for the list fields
+
+List precision, recall and F1 pool items within notes. Items in one note
+share the note's text and tend to be right or wrong together. The naive
+Wilson interval treats every item as an independent trial. The published
+note-level bootstrap resamples whole notes and keeps that correlation. The
+naive interval is narrower.
+
+```{r}
+li <- metrics(counts, field = list_fields,
+  metric = c("precision", "recall", "f1"), method = "naive_wilson")
+li$published_lower <- c(80.7, 83.2, 83.4, 90.3, 82.4, 87.3) / 100
+li$published_upper <- c(91.6, 95.4, 92.1, 98.4, 92.8, 94.7) / 100
+li$naive <- sprintf("%.1f-%.1f", 100 * li$lower, 100 * li$upper)
+li$published <- sprintf("%.1f-%.1f", 100 * li$published_lower,
+  100 * li$published_upper)
+li$width_ratio <- round(
+  (li$upper - li$lower) / (li$published_upper - li$published_lower), 2
+)
+li[, c("field", "metric", "naive", "published", "width_ratio")]
+```
+
+The naive intervals are about half to two thirds as wide as the note-level
+intervals (`width_ratio` is naive width over published width). A report that used
+the naive interval would overstate the precision of these estimates.
+
+## Certifying against 0.90
+
+The threshold test asks whether a metric exceeds 0.90 with one-sided
+alpha 0.025. The decision is that the lower bound of the 95% interval
+exceeds 0.90. For the scalar fields the Wilson bound decides.
+
+```{r}
+tt <- test_threshold(counts, rep(scalar_fields, each = 3),
+  metric = rep(c("precision", "recall", "specificity"), 3), theta0 = 0.90)
+tt$lower <- round(tt$lower, 3)
+tt$p_value <- signif(tt$p_value, 2)
+tt[, c("field", "metric", "estimate", "lower", "p_value", "reject")]
+```
+
+For the list fields the published note-level lower bound decides.
+
+```{r}
+li$certifies_090 <- li$published_lower > 0.90
+li[, c("field", "metric", "published", "certifies_090")]
+```
+
+Only biomarker precision certifies. The F1 of both list fields falls short.
+
+## Omissions against commissions
+
+Treatment Drugs has 40 missed and 55 spurious items. Biomarker Test Results
+has 41 missed and 16 spurious. The binomial test compares the missed share
+with one half and treats items as independent.
+
+```{r}
+asym <- do.call(rbind, lapply(list_fields, function(f) {
+  test_asymmetry(counts, f, method = "binomial")
+}))
+asym$estimate <- round(asym$estimate, 3)
+asym$p_value <- signif(asym$p_value, 2)
+asym[, c("field", "estimate", "n", "p_value", "reject")]
+```
+
+The biomarker field misses more than it adds. The drug field shows no clear
+imbalance.
+
+The clustered tests need per-note counts, which the paper does not report.
+They are shown here on simulated notes that resemble the biomarker field:
+100 notes, about 4 reference items each, within-note correlation 0.2, and
+about 0.4 spurious items per missed item.
+
+```{r}
+sim <- simulate_counts(n = 100, theta = 0.88, m = 4, rho = 0.2,
+  spu_ratio = 0.4, type = "list", seed = 2026)
+rbind(
+  test_asymmetry(sim, "field", method = "signflip", seed = 1),
+  test_asymmetry(sim, "field", method = "cluster_t"),
+  test_asymmetry(sim, "field", method = "binomial")
+)[, c("method", "estimate", "p_value", "reject")]
+test_threshold(sim, "field", "f1", theta0 = 0.80, seed = 1)
+```
+
+The sign-flip test works on the per-note difference between missed and
+spurious items. A substitution adds one of each to the same note, so it
+leaves the test unchanged.
+
+## Planning the next validation
+
+Three planning questions follow. Each asks for 80% power at one-sided alpha
+0.025.
+
+1. How many notes are needed to certify a scalar recall of 0.90 when the
+   true value is 0.95?
+2. The same question for a field present in 79% of notes, the prevalence
+   of the diagnosis field (158 of 200).
+3. How many notes are needed to certify a list F1 of 0.85 when the true
+   value is 0.90, with 4 items per note and within-note correlation 0.2?
+
+```{r}
+rbind(
+  n_threshold(0.90, 0.95),
+  n_threshold(0.90, 0.95, prevalence = 158 / 200),
+  n_threshold(0.85, 0.90, m = 4, rho = 0.2)
+)[, c("theta0", "theta1", "m", "rho", "prevalence", "deff", "n_units",
+  "n_present", "n_notes")]
+```
+
+The list design counts items, inflates them by the design effect, and
+divides by the items per note.
+
+A small sample sets a hard limit on what it can certify. With 50 notes the
+smallest count whose Wilson lower bound exceeds 0.90 is:
+
+```{r}
+min_certifiable(50, 0.90)
+```
+
+Only a perfect 50 of 50 certifies 0.90. A result of 49 of 50 gives a lower
+bound of 0.895.
+
+## Reference
+
+Moldovan, M., et al. (2026). medRxiv 2026.05.18.26353541.
+https://doi.org/10.64898/2026.05.18.26353541

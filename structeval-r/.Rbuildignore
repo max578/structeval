@@ -1,0 +1,4 @@
+^README\.Rmd$
+^\.lintr$
+^air\.toml$
+^tests/fixtures/make_.*$
