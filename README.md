@@ -10,10 +10,10 @@ A methods paper describing these procedures is in preparation. The worked exampl
 
 | Folder | Contents |
 |---|---|
-| `structeval-r/` | The R package, version 0.1.0. Source, tests, vignette. |
+| `structeval-r/` | The R package, version 0.1.1. Source, tests, vignette. |
 | `structeval-py/` | The Python reference implementation used to cross-check the R results, with its tests. |
 | `sim/` | The size-and-power simulation study: code, seeds, logs and result tables. |
-| `release/` | The built source package `structeval_0.1.0.tar.gz` with its checksum. |
+| `release/` | The built source packages `structeval_0.1.0.tar.gz` and `structeval_0.1.1.tar.gz` with their checksums. |
 | `samples.csv` | A 14-row synthetic table in the extraction layout, one row per outcome type. The Python tests and the R README example read it. |
 
 ## Install the R package
@@ -28,7 +28,7 @@ remotes::install_github("max578/structeval", subdir = "structeval-r")
 From the built source package:
 
 ```r
-install.packages("release/structeval_0.1.0.tar.gz", repos = NULL, type = "source")
+install.packages("release/structeval_0.1.1.tar.gz", repos = NULL, type = "source")
 ```
 
 The package depends on base R only. The vignette and the tests use knitr, rmarkdown, testthat, ggplot2 and jsonlite.
@@ -44,7 +44,7 @@ It needs Python 3.11 or later, pandas and numpy.
 
 ## Cross-check between the two implementations
 
-`structeval-r/tests/fixtures/make_crosscheck_python.py` runs the Python implementation on the shared fixture `crosscheck.csv` and writes `crosscheck_python.json`. The R test `test-crosscheck.R` recomputes the same quantities and compares them to that file. The fixture and the Python output ship with the package, so the comparison runs as part of the R tests without Python installed.
+`structeval-r/tests/fixtures/make_crosscheck_python.py` runs the Python implementation on the two shared fixtures, `crosscheck.csv` (every edge case of the counting rules) and `crosscheck_adversarial.csv` (inputs on which earlier versions differed), and writes `crosscheck_python.json` and `crosscheck_adversarial_python.json`. The R test `test-crosscheck.R` recomputes the same quantities, every count including TN, every point estimate and every Wilson bound, and compares them to those files. The fixtures and the Python output ship with the package, so the comparison runs as part of the R tests without Python installed.
 
 ## Reproduce the simulation study
 
@@ -59,7 +59,7 @@ The full study takes about 14 minutes on 5 cores. Finished cells are cached in `
 
 ## Citation
 
-See `CITATION.cff`. Until the methods paper appears, cite the software.
+Until the methods paper appears, cite the software. In R, `citation("structeval")` gives the reference.
 
 ## Licence
 

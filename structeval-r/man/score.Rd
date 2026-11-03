@@ -4,7 +4,11 @@
 \alias{score}
 \title{Count agreements per note and field}
 \usage{
-score(data, missing = c("wrong", "skip"))
+score(
+  data,
+  missing = c("wrong", "skip"),
+  null_tokens = c("null", "none", "na", "n/a")
+)
 }
 \arguments{
 \item{data}{Long table with columns \code{note}, \code{field}, \code{type}, \code{truth} and
@@ -12,15 +16,17 @@ score(data, missing = c("wrong", "skip"))
 of character (or logical) vectors; \code{character(0)} means no information
 and \code{NA} means unlabelled.}
 
-\item{missing}{Policy for a missing prediction (\code{NA}, or a binary value
-that is not \code{TRUE}/\code{FALSE}). \code{"wrong"} scores a binary prediction as the
-wrong class and a scalar or list prediction as empty. \code{"skip"} drops the
-row.}
+\item{missing}{Policy for a missing prediction, \code{"wrong"} or \code{"skip"},
+as described in Details.}
+
+\item{null_tokens}{Items that mean an empty value, compared after
+normalisation. \code{character(0)} keeps every such item as a value.}
 }
 \value{
 A data frame with columns \code{note}, \code{field}, \code{type}, \code{cor}, \code{inc},
 \code{mis}, \code{spu} and \code{tn} (integers), one row per scored note and field. The
-attribute \code{fields} lists every field and its type.
+attribute \code{fields} lists every field and its type, and the attribute
+\code{coverage} gives the row counts described in Details.
 }
 \description{
 Compares reference and model items for every note and field and returns
@@ -28,24 +34,80 @@ five counts per row: correct (\code{cor}), incorrect (\code{inc}), missed (\code
 spurious (\code{spu}) and true negative (\code{tn}).
 }
 \details{
-Items are normalised before comparison: surrounding whitespace is trimmed,
-case is folded, internal runs of whitespace collapse to one space, and
-empty items and \code{"-"} items are dropped. Duplicate items count once.
+\strong{Normalisation.} Every item passes through the same steps, in this
+order, on both sides:
+\enumerate{
+\item Whitespace: every Unicode space character (tab, line feed, vertical
+tab, form feed, carriage return, space, U+0085, U+00A0, U+1680,
+U+2000 to U+200A, U+2028, U+2029, U+202F, U+205F, U+3000) is
+trimmed at both ends, and internal runs collapse to one space.
+\item Case: the simple one-to-one Unicode lowercase mapping (\code{\link[=tolower]{tolower()}}),
+so the German sharp s does not match \code{"ss"}. This needs a UTF-8 locale when
+an item is not ASCII; outside one, \code{score()} stops rather than fold
+differently. Composed and decomposed forms of an accented letter are
+different strings (no Unicode normalisation).
+\item Numbers: an item that is a plain decimal, an optional minus sign,
+an integer part without leading zeros and an optional fraction
+(\verb{-?(0|[1-9][0-9]*)(\\.[0-9]+)?}), is rewritten in one canonical form
+(trailing fractional zeros dropped, \code{"-0"} read as \code{"0"}), so \code{"4"},
+\code{"4.0"} and \code{"4.00"} match. Everything else stays text and is compared
+as text: codes with leading zeros (\code{"007"}, \code{"02"}), exponent forms
+(\code{"1e3"}), \code{"+4"}, \code{".5"}, \code{"inf"} and \code{"NaN"}. A \code{"NaN"} item is a
+value, never a missing one.
+\item Empty values: an item that is then empty, \code{"-"}, an en dash or an em
+dash, or one of \code{null_tokens} is dropped. The default tokens are
+\code{"null"}, \code{"none"}, \code{"na"} and \code{"n/a"}, matched after case folding, so
+\code{"NULL"}, \code{"None"}, \code{"NA"} and \code{"N/A"} are empty values. The base paper
+defines a missed value as one where "the model output is empty or
+null". \code{"unknown"} and \code{"NaN"} stay values. The rule is the same for a
+long table built by hand and for one from \code{\link[=read_oncoshot]{read_oncoshot()}}, which
+keeps the text \code{"NA"} as written (only a blank cell becomes \code{NA}).
+\item Duplicate items count once.
+}
+
+\strong{Outcomes by field type.}
 \itemize{
 \item \strong{binary}: the reference and the prediction are \code{TRUE} or \code{FALSE}
-(also \code{t}/\code{f}, \code{yes}/\code{no}, \code{1}/\code{0}). A true positive is \code{cor}, a false
-positive \code{spu}, a false negative \code{mis} and a true negative \code{tn}.
+(also \code{t}/\code{f}, \code{yes}/\code{no}, \code{y}/\code{n}, \code{1}/\code{0}, after normalisation, so
+\code{"1.0"} is \code{TRUE}). A true positive is \code{cor}, a false positive \code{spu}, a
+false negative \code{mis} and a true negative \code{tn}. Any other value stops
+with the distinct values listed, in the reference and in the
+prediction alike; recode them before scoring.
 \item \strong{scalar}: zero or one item on each side. Both empty gives \code{tn = 1};
 reference only gives \code{mis = 1}; prediction only gives \code{spu = 1}; both
 present gives \code{cor = 1} when equal and \code{inc = 1} otherwise.
 \item \strong{list}: \code{cor} is the size of the intersection, \code{mis} the reference
-items not predicted, \code{spu} the predicted items not in the reference;
-both empty gives \code{tn = 1}.
+items not predicted, \code{spu} the predicted items not in the reference.
+\code{tn = 1} records a note in which both sides are empty (the
+"noncommittal" case of MUC-5). No list metric uses it: list fields
+have no specificity and no accuracy, as in the base paper.
 }
 
-A row whose reference is \code{NA} is unlabelled and skipped. A field with no
-labelled row is reported by a warning and kept in the \code{fields} attribute,
-so \code{\link[=metrics]{metrics()}} reports it as undefined rather than dropping it.
+\strong{Unlabelled and empty references.} A reference that is \code{NULL}, \code{NA},
+or only blank strings (after the whitespace rule) is unlabelled for every
+type and the row is skipped. A reference that is empty after
+normalisation (\code{character(0)}, \code{"-"}, a dash or a null token) holds no
+information: for scalar and list fields it is scored (\code{tn} or \code{spu});
+for binary fields it has no class, so the row is skipped and reported
+by a message.
+
+\strong{Missing predictions.} A prediction that is \code{NA} or blank, and for
+binary fields one that is empty after normalisation, is missing. Under
+\code{missing = "wrong"} a missing binary prediction is scored as the wrong
+class, while a missing scalar or list prediction is scored as an empty
+answer: a missed value when the reference has one, and a true negative
+when the reference is empty. Under \code{missing = "skip"} the row is dropped
+and a message gives the count. A scalar or list prediction of \code{"-"} or a
+null token is an empty answer under both policies.
+
+The attribute \code{coverage} records, per field, the rows read
+(\code{rows}), skipped as unlabelled (\code{unlabelled}), skipped as binary
+references with no information (\code{no_information}), with a missing
+prediction (\code{pred_missing}), dropped under \code{missing = "skip"}
+(\code{skipped_missing}) and scored (\code{scored}). \code{\link[=metrics]{metrics()}} carries it over.
+A field with no scored row is reported by a warning and kept in the
+\code{fields} attribute, so \code{\link[=metrics]{metrics()}} reports it as undefined rather than
+dropping it. A note and field pair that appears twice stops \code{score()}.
 }
 \examples{
 long <- data.frame(
@@ -56,6 +118,13 @@ long <- data.frame(
 long$truth <- list(c("XELOX", "Bevacizumab"), character(0), "FOLFOX")
 long$pred <- list(c("xelox"), character(0), c("FOLFOX", "Cetuximab"))
 score(long)
+attr(score(long), "coverage")
+}
+\references{
+Chinchor, N., & Sundheim, B. (1993). MUC-5 evaluation metrics. In
+\emph{Proceedings of the Fifth Message Understanding Conference (MUC-5)}
+(pp. 69-78). Association for Computational Linguistics.
+\doi{10.3115/1072017.1072026}
 }
 \seealso{
 \code{\link[=metrics]{metrics()}} for estimates and intervals.

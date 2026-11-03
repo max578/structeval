@@ -20,8 +20,8 @@ metrics(
 \item{field}{Fields to report. \code{NULL} reports every field.}
 
 \item{metric}{Metrics to report. \code{NULL} reports the default set for each
-field type: precision, recall, F1 and specificity, plus accuracy for
-binary and scalar fields. \code{"mis_share"} is also available.}
+field type: precision, recall and F1, plus specificity and accuracy
+for binary and scalar fields. \code{"mis_share"} is also available.}
 
 \item{method}{Interval method: \code{"auto"} (the router described in
 Details), \code{"wilson"}, \code{"naive_wilson"} (Wilson on the pooled item counts,
@@ -40,7 +40,8 @@ number state is restored afterwards.}
 A data frame with one row per field and metric and columns
 \code{field}, \code{type}, \code{metric}, \code{estimate}, \code{lower}, \code{upper}, \code{method}, \code{k}
 (\eqn{\sum a_i}), \code{n} (\eqn{\sum b_i}), \code{n_notes} (notes with
-\eqn{b_i > 0}) and \code{boundary}.
+\eqn{b_i > 0}) and \code{boundary}. The attribute \code{coverage} of the counts
+from \code{\link[=score]{score()}}, if present, is carried over.
 }
 \description{
 Pools counts over notes (micro averaging) and reports each metric as a
@@ -59,8 +60,18 @@ Each metric is \eqn{R = \sum_i a_i / \sum_i b_i} over notes:\tabular{lll}{
 }
 
 
-F1 computed this way equals \eqn{2PR/(P+R)}. Accuracy applies to binary
-and scalar fields. Specificity is a note-level proportion for every type.
+F1 is computed from the counts as \eqn{2C/(2C + M + S + 2I)}. It equals
+the harmonic mean \eqn{2PR/(P+R)} whenever precision and recall are both
+defined. When the model returns nothing for a field with reference
+values, precision is undefined (\code{NA}) while recall and F1 are 0, the
+convention of scikit-learn's \code{f1_score()}.
+
+Specificity is the share of notes with an empty (binary: negative)
+reference in which the model also returned nothing (binary: a negative).
+Specificity and accuracy apply to binary and scalar fields only. A list
+field has no note-level negative class, so requesting either for a list
+field stops with an error, as the base paper reports neither for list
+fields. The \code{tn} count of a list field is kept for reference.
 
 With \code{method = "auto"}, a metric whose note-level denominators are all 0
 or 1 (binary and scalar precision, recall, specificity and accuracy) gets
@@ -71,7 +82,13 @@ F1, scalar F1) gets the note-level cluster bootstrap with BCa percentiles.
 estimate is 0 or 1, the bootstrap distribution has no spread, or the
 acceleration is undefined, the interval is the Wilson interval on
 \code{round(R * n_notes)} successes in \code{n_notes} trials (the notes are the
-trials) and \code{boundary} is \code{TRUE}. No zero-width interval is returned. For
+trials) and \code{boundary} is \code{TRUE}. Every other \code{cluster_bca} and
+\code{cluster_delta} interval is capped: its lower bound is never above the
+Wilson lower bound of a perfect record on the same notes (\code{n_notes}
+successes in \code{n_notes} trials), and its upper bound is never below the
+Wilson upper bound of an empty record (no successes). A sample with
+errors therefore never certifies more than a perfect record on the same
+notes. No zero-width interval is returned. For
 \code{percentile}, \code{boundary} flags the same condition but the percentile
 interval is returned unchanged, so its failure stays visible.
 

@@ -17,14 +17,17 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from .aggregate import (BINARY_COUNTS, SET_COUNTS, binary_metrics, fbeta,
-                        set_metrics)
-from .compare import (compare_binary, compare_set, is_unlabeled, parse_listish)
+from .aggregate import (BINARY_COUNTS, SET_COUNTS, binary_metrics,
+                        scalar_metrics, set_metrics)
+from .compare import (NULL_TOKENS, binary_state, compare_binary, compare_set,
+                      is_unlabeled, parse_listish)
+from .read import read_oncoshot
 from .uncertainty import binary_wilson_cis, bootstrap_ci, paired_difference_ci
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
-__all__ = ["evaluate", "compare_models", "Report", "__version__"]
+__all__ = ["evaluate", "compare_models", "read_oncoshot", "Report",
+           "__version__"]
 
 
 # --------------------------------------------------------------------------- #
@@ -67,15 +70,41 @@ def _infer_fields(df: pd.DataFrame, prefix: str) -> list[str]:
             if c.startswith(prefix) and c[len(prefix):] in df.columns]
 
 
-def _is_binary(labels: pd.Series) -> bool:
-    vals = labels.dropna()
-    return len(vals) > 0 and vals.map(lambda x: isinstance(x, (bool, np.bool_))).all()
+_KINDS = ("binary", "scalar", "list")
 
 
-def _is_scalar(label_col: pd.Series, pred_col: pd.Series) -> bool:
-    """A field is scalar when no cell on either side is a list."""
-    both = pd.concat([label_col, pred_col])
-    return not both.map(lambda x: isinstance(x, list)).any()
+def _infer_kind(field: str, labels: pd.Series, preds: pd.Series) -> str:
+    """Field type from the data, refusing every ambiguous case.
+
+    A label column of booleans is binary. A label column whose values all read
+    as flags (``0``/``1``, ``"yes"``/``"no"``, ``"TRUE"``/``"-"``) but are not all
+    booleans, or that mixes booleans with other values, raises: declare the
+    field in ``types`` instead. Otherwise the field is a list when any cell on
+    either side is a list, and a scalar if not.
+    """
+    vals = [v for v in labels if not is_unlabeled(v)]
+    is_bool = [isinstance(v, (bool, np.bool_)) for v in vals]
+    if vals and all(is_bool):
+        return "binary"
+    flaglike = [binary_state(v) in ("true", "false", "empty") for v in vals]
+    if any(is_bool) or (vals and all(flaglike)
+                        and any(binary_state(v) != "empty" for v in vals)):
+        raise ValueError(
+            f"cannot tell whether field '{field}' is binary from its values; "
+            "declare it with types={'" + field + "': 'binary'} (or 'scalar').")
+    both = pd.concat([labels, preds])
+    return "list" if both.map(lambda x: isinstance(x, list)).any() else "scalar"
+
+
+def _field_kind(field, labels, preds, types):
+    if types is None:
+        return _infer_kind(field, labels, preds)
+    if field not in types:
+        raise ValueError(f"types has no entry for field '{field}'")
+    kind = types[field]
+    if kind not in _KINDS:
+        raise ValueError(f"field types must be one of {_KINDS}; got '{kind}'")
+    return kind
 
 
 def _metric_fns(kind: str, beta: float, partial_weight: float):
@@ -86,8 +115,14 @@ def _metric_fns(kind: str, beta: float, partial_weight: float):
         def make(name):
             return lambda t: binary_metrics(t[0], t[1], t[2], t[3], beta)[name]
         names = ["precision", "recall", fkey, "accuracy", "specificity"]
-    else:
-        order = SET_COUNTS  # cor, inc, mis, spu, par
+    elif kind == "scalar":
+        order = SET_COUNTS  # cor, inc, mis, spu, par, tn
+        def make(name):
+            return lambda t: scalar_metrics(t[0], t[1], t[2], t[3], t[4], t[5],
+                                           beta, partial_weight)[name]
+        names = ["precision", "recall", fkey, "specificity", "accuracy"]
+    else:  # list: no specificity or accuracy (base paper Table 1)
+        order = SET_COUNTS
         def make(name):
             return lambda t: set_metrics(t[0], t[1], t[2], t[3], t[4],
                                         beta, partial_weight)[name]
@@ -99,11 +134,12 @@ def _metric_fns(kind: str, beta: float, partial_weight: float):
 # public API
 # --------------------------------------------------------------------------- #
 def evaluate(df: pd.DataFrame, fields: list[str] | None = None,
-             pred_prefix: str = "Res: ", beta: float = 1.0, ci: float = 0.95,
+             types: dict | None = None, pred_prefix: str = "Res: ", beta: float = 1.0, ci: float = 0.95,
              n_boot: int = 2000, cluster: str | None = None,
              missing: str = "wrong", partial_weight: float = 0.5,
              parents: dict | None = None,
              confidence_suffix: str = " confidence",
+             null_tokens=NULL_TOKENS,
              random_state: int | None = 42) -> Report:
     """Evaluate predicted vs. labelled fields with point estimates and CIs.
 
@@ -112,6 +148,9 @@ def evaluate(df: pd.DataFrame, fields: list[str] | None = None,
     df : DataFrame with a unique index; a label column ``F`` and a prediction
         column ``{pred_prefix}F`` for every field evaluated.
     fields : fields to evaluate; ``None`` auto-infers from ``{pred_prefix}*``.
+    types : mapping field -> ``"binary"`` | ``"scalar"`` | ``"list"``, as in the
+        R package. ``None`` infers the type from the data and raises when the
+        inference is ambiguous (for example 0/1 or TRUE/FALSE/"-" labels).
     beta : F-beta weight (1.0 = F1, 2.0 = recall-weighted F2).
     ci : confidence level (e.g. 0.95).
     n_boot : bootstrap replicates for non-binomial metrics.
@@ -121,6 +160,9 @@ def evaluate(df: pd.DataFrame, fields: list[str] | None = None,
         :func:`structeval.compare.compare_binary`.
     partial_weight : credit for a partial (parent) match.
     parents : child -> parent map enabling partial-credit matching.
+    null_tokens : items that mean an empty value, matched after case folding
+        (default ``"null"``, ``"none"``, ``"na"``, ``"n/a"``); ``()`` keeps
+        them as values.
     """
     if not (0.0 < ci < 1.0):
         raise ValueError("ci must be in (0, 1)")
@@ -150,8 +192,8 @@ def evaluate(df: pd.DataFrame, fields: list[str] | None = None,
 
     for field in fields:
         labels, preds = df[field], df[f"{pred_prefix}{field}"]
-        kind = "binary" if _is_binary(labels) else "set"
-        scalar = kind != "binary" and _is_scalar(labels, preds)
+        kind = _field_kind(field, labels, preds, types)
+        scalar = kind == "scalar"
         count_cols = BINARY_COUNTS if kind == "binary" else SET_COUNTS
 
         # --- per-case comparison ---
@@ -160,8 +202,9 @@ def evaluate(df: pd.DataFrame, fields: list[str] | None = None,
         has_conf = conf_col in df.columns
         for idx in df.index:
             exp, act = labels.loc[idx], preds.loc[idx]
-            r = (compare_binary(exp, act, missing) if kind == "binary"
-                 else compare_set(exp, act, parents, scalar))
+            r = (compare_binary(exp, act, missing, null_tokens)
+                 if kind == "binary"
+                 else compare_set(exp, act, parents, scalar, null_tokens))
             for c in count_cols:
                 cases.loc[idx, f"{field} [{c}]"] = r[c] if r else np.nan
             if r is None:
@@ -232,6 +275,7 @@ def evaluate(df: pd.DataFrame, fields: list[str] | None = None,
 
 def compare_models(df: pd.DataFrame, fields: list[str], a_prefix: str,
                    b_prefix: str, metric: str = "f1", beta: float = 1.0,
+                   types: dict | None = None,
                    ci: float = 0.95, n_boot: int = 2000, cluster: str | None = None,
                    missing: str = "wrong", partial_weight: float = 0.5,
                    parents: dict | None = None,
@@ -253,9 +297,9 @@ def compare_models(df: pd.DataFrame, fields: list[str], a_prefix: str,
     rows = []
     for field in fields:
         labels = df[field]
-        kind = "binary" if _is_binary(labels) else "set"
-        scalar = kind != "binary" and _is_scalar(
-            labels, df.get(f"{a_prefix}{field}", labels))
+        kind = _field_kind(field, labels,
+                           df.get(f"{a_prefix}{field}", labels), types)
+        scalar = kind == "scalar"
         count_cols = BINARY_COUNTS if kind == "binary" else SET_COUNTS
         fns, _, fkey = _metric_fns(kind, beta, partial_weight)
         mkey = fkey if metric in ("f", "fbeta", fkey) else metric

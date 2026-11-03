@@ -58,6 +58,14 @@
     } else {
       paste0(used, " (p: cluster_delta)")
     }
+    if (used %in% c("cluster_bca", "cluster_delta")) {
+      # The boundary cap: never below the perfect record's p on these notes.
+      p_cap <- .score_p_upper(res$n_notes, res$n_notes, theta0)
+      if (p_cap > p) {
+        p <- p_cap
+        label <- paste0(used, " (p: boundary cap)")
+      }
+    }
   } else {
     p <- .score_p_upper(round(r * res$n_notes), res$n_notes, theta0)
     label <- paste0(used, " (p: wilson on notes)")
@@ -85,7 +93,10 @@
 #' \eqn{z = (\mathrm{logit} R - \mathrm{logit}\,\theta_0)/SE_{logit}}; for
 #' `cluster_bca` and `percentile` this p-value comes from the
 #' `cluster_delta` variance and the `method` column says so. At the
-#' boundary the score test on notes as trials is used.
+#' boundary the score test on notes as trials is used. Under `cluster_bca`
+#' or `cluster_delta` the p-value is never below that score test for a
+#' perfect record on the same notes, in line with the boundary cap of
+#' [metrics()], and the `method` column then reads `(p: boundary cap)`.
 #'
 #' @inheritParams metrics
 #' @param field One or more fields.
@@ -329,7 +340,9 @@ test_paired <- function(counts_a, counts_b, field, metric,
   p <- switch(method,
     signflip = .signflip_p(d, n_perm, signs),
     cluster_t = {
-      if (stats::sd(d) > 0) {
+      if (length(d) < 2L) {
+        NA_real_
+      } else if (stats::sd(d) > 0) {
         stats::t.test(d)$p.value
       } else if (all(d == 0)) {
         1
@@ -357,7 +370,8 @@ test_paired <- function(counts_a, counts_b, field, metric,
 #' * `signflip`: random sign flips of \eqn{d_i} over every scored note of
 #'   the field, two-sided. Exact under within-note symmetry of the two error
 #'   labels.
-#' * `cluster_t`: one-sample t test on \eqn{d_i}.
+#' * `cluster_t`: one-sample t test on \eqn{d_i}; `NA` with a warning when
+#'   the field has fewer than two notes or constant non-zero differences.
 #' * `binomial`: exact binomial test of \eqn{\sum mis} out of
 #'   \eqn{\sum mis + \sum spu} against 0.5. Items are treated as independent;
 #'   this is the naive comparison method.
@@ -399,6 +413,12 @@ test_asymmetry <- function(counts, field,
     warning(
       "No missed or spurious items for field '", field,
       "'; the asymmetry test is undefined.",
+      call. = FALSE
+    )
+  } else if (is.na(res$p_value) && nrow(rows) < 2L) {
+    warning(
+      "Field '", field, "' has fewer than two notes; the t test is ",
+      "undefined.",
       call. = FALSE
     )
   } else if (is.na(res$p_value)) {

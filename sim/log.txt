@@ -364,3 +364,735 @@
 2026-10-29 20:11:37 THETA_TRUE max |theta_true_metric - theta| = 7.30e-04
 2026-10-29 20:11:37 DELTA_TRUE range by target: [-0.0003, 0.0002] list 0; [0.0296, 0.0299] list 0.03; [0.0498, 0.0504] list 0.05; [-0.0003, -0.0000] proportion 0; [0.0297, 0.0304] proportion 0.03; [0.0499, 0.0501] proportion 0.05
 2026-10-29 20:11:38 END total 829.7 s, 6289 keys
+2026-11-03 19:55:51 START reps=2000 B=1000 cores=5 seed_base=20261029
+2026-11-03 19:55:53 SPEEDUP 1 core 1.41 s, 5 cores 0.39 s, ratio 3.65
+2026-11-03 19:55:54 DEPLOYMENT and planner keys computed (171 keys)
+2026-11-03 19:55:59 CALIBRATE type=list delta=0.00 delta_logit=0.000000
+2026-11-03 19:55:59 CALIBRATE type=proportion delta=0.00 delta_logit=0.000000
+2026-11-03 19:55:59 CALIBRATE type=list delta=0.03 delta_logit=0.472533
+2026-11-03 19:55:59 CALIBRATE type=proportion delta=0.03 delta_logit=0.390940
+2026-11-03 19:55:59 CALIBRATE type=list delta=0.05 delta_logit=0.893630
+2026-11-03 19:55:59 CALIBRATE type=proportion delta=0.05 delta_logit=0.746999
+2026-11-03 19:55:59 GRIDS begin: 351 cells (A 117, B 162, C 36, planner 36)
+2026-11-03 19:56:52 CELL c290 52.9 s type=list n=400 delta=0.03 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 19:56:52 CELL c296 52.9 s type=list n=400 delta=0.05 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 19:56:52 CELL c284 52.9 s type=list n=400 delta=0 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 19:56:53 CELL c291 53.8 s type=proportion n=400 delta=0.03 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 19:56:53 CELL c285 53.9 s type=proportion n=400 delta=0 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 19:57:44 CELL c302 51.7 s type=list n=400 delta=0 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 19:57:44 CELL c303 52.3 s type=proportion n=400 delta=0 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 19:57:45 CELL c308 51.7 s type=list n=400 delta=0.03 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 19:57:45 CELL c297 52.7 s type=proportion n=400 delta=0.05 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 19:57:45 CELL c309 52.2 s type=proportion n=400 delta=0.03 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 19:58:21 CELL a010 36.5 s n=400 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 19:58:21 CELL a005 36.6 s n=400 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 19:58:22 CELL a015 36.6 s n=400 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 19:58:34 CELL c314 50.3 s type=list n=400 delta=0.05 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 19:58:35 CELL c315 50.8 s type=proportion n=400 delta=0.05 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 19:58:59 CELL a020 38.1 s n=400 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 19:58:59 CELL a024 38.3 s n=400 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:00 CELL a028 38.2 s n=400 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:12 CELL a032 37.9 s n=400 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:13 CELL a036 37.8 s n=400 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:37 CELL a040 38.2 s n=400 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:38 CELL a044 38.3 s n=400 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:38 CELL a048 38.3 s n=400 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:50 CELL a052 38.4 s n=400 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 19:59:51 CELL a056 38.6 s n=400 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:00:18 CELL a060 40.1 s n=400 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:00:18 CELL a064 40.1 s n=400 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:00:19 CELL a068 40.3 s n=400 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:00:32 CELL a072 42.3 s n=400 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:00:35 CELL a076 43.2 s n=400 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:01:01 CELL a080 43.7 s n=400 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:01:02 CELL a084 43.6 s n=400 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:01:02 CELL a088 43.6 s n=400 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:15 CELL a092 42.2 s n=400 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:16 CELL a096 41.7 s n=400 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:40 CELL a100 39.2 s n=400 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:41 CELL a104 39.2 s n=400 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:41 CELL a108 39.1 s n=400 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:41 CELL p324 0.9 s scenario=P3 type=proportion theta0=0.85 theta1=0.9 m=1 rho=0 n_planned=363 factor=1.2 n_run=436
+2026-11-03 20:01:53 CELL a112 38.0 s n=400 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:01:54 CELL a116 38.1 s n=400 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:02:08 CELL c282 27.0 s type=list n=200 delta=0 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:02:08 CELL c288 27.1 s type=list n=200 delta=0.03 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:02:09 CELL c283 27.6 s type=proportion n=200 delta=0 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:02:22 CELL c289 28.8 s type=proportion n=200 delta=0.03 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:02:23 CELL c294 28.3 s type=list n=200 delta=0.05 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:02:35 CELL c295 27.6 s type=proportion n=200 delta=0.05 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:02:36 CELL c300 27.1 s type=list n=200 delta=0 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:02:36 CELL c301 27.1 s type=proportion n=200 delta=0 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:02:37 CELL p323 0.7 s scenario=P3 type=proportion theta0=0.85 theta1=0.9 m=1 rho=0 n_planned=363 factor=1 n_run=363
+2026-11-03 20:02:38 CELL p322 0.9 s scenario=P3 type=proportion theta0=0.85 theta1=0.9 m=1 rho=0 n_planned=363 factor=0.8 n_run=290
+2026-11-03 20:02:38 CELL p318 0.8 s scenario=P1 type=proportion theta0=0.9 theta1=0.95 m=1 rho=0 n_planned=239 factor=1.2 n_run=287
+2026-11-03 20:02:47 CELL c306 25.4 s type=list n=200 delta=0.03 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:02:49 CELL c307 25.8 s type=proportion n=200 delta=0.03 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:02:56 CELL a004 17.9 s n=200 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:03:01 CELL c312 25.1 s type=list n=200 delta=0.05 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:03:01 CELL c313 25.5 s type=proportion n=200 delta=0.05 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:03:05 CELL a009 18.2 s n=200 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:03:07 CELL a014 18.2 s n=200 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:03:17 CELL a019 20.4 s n=200 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:03:19 CELL a023 18.7 s n=200 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:20 CELL a027 18.6 s n=200 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:24 CELL a031 18.7 s n=200 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:25 CELL a035 18.6 s n=200 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:35 CELL a039 18.4 s n=200 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:38 CELL a043 18.4 s n=200 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:38 CELL a047 18.5 s n=200 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:42 CELL a051 18.4 s n=200 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:03:44 CELL a055 18.5 s n=200 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:03:54 CELL a059 18.4 s n=200 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:03:56 CELL a063 18.5 s n=200 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:03:57 CELL a067 18.5 s n=200 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:04:01 CELL a071 18.6 s n=200 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:04:03 CELL a075 18.7 s n=200 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:04:12 CELL a079 18.5 s n=200 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:04:15 CELL a083 18.4 s n=200 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:04:15 CELL a087 18.5 s n=200 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:19 CELL a091 18.4 s n=200 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:21 CELL a095 18.4 s n=200 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:31 CELL a099 18.5 s n=200 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:31 CELL p317 0.7 s scenario=P1 type=proportion theta0=0.9 theta1=0.95 m=1 rho=0 n_planned=239 factor=1 n_run=239
+2026-11-03 20:04:33 CELL a103 18.4 s n=200 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:34 CELL a107 18.5 s n=200 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:38 CELL a111 18.4 s n=200 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:40 CELL a115 18.5 s n=200 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:04:45 CELL c280 13.8 s type=list n=100 delta=0 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:04:47 CELL c281 14.2 s type=proportion n=100 delta=0 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:04:47 CELL c286 13.6 s type=list n=100 delta=0.03 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:04:52 CELL c287 14.3 s type=proportion n=100 delta=0.03 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:04:53 CELL c292 13.6 s type=list n=100 delta=0.05 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:04:59 CELL c293 13.7 s type=proportion n=100 delta=0.05 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:05:00 CELL c299 12.2 s type=proportion n=100 delta=0 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:05:00 CELL c298 13.3 s type=list n=100 delta=0 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:05:01 CELL p316 0.8 s scenario=P1 type=proportion theta0=0.9 theta1=0.95 m=1 rho=0 n_planned=239 factor=0.8 n_run=191
+2026-11-03 20:05:05 CELL c304 13.0 s type=list n=100 delta=0.03 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:05:07 CELL c305 13.5 s type=proportion n=100 delta=0.03 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:05:12 CELL c310 12.6 s type=list n=100 delta=0.05 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:05:12 CELL p327 0.7 s scenario=P4 type=proportion theta0=0.85 theta1=0.93 m=1 rho=0 n_planned=131 factor=1.2 n_run=157
+2026-11-03 20:05:13 CELL c311 13.1 s type=proportion n=100 delta=0.05 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:05:17 CELL p339 15.5 s scenario=L4 type=list theta0=0.9 theta1=0.95 m=4 rho=0.5 n_planned=150 factor=1.2 n_run=180
+2026-11-03 20:05:20 CELL p348 14.7 s scenario=L7 type=list theta0=0.85 theta1=0.9 m=4 rho=0.2 n_planned=146 factor=1.2 n_run=175
+2026-11-03 20:05:21 CELL p333 14.5 s scenario=L2 type=list theta0=0.9 theta1=0.95 m=2 rho=0.2 n_planned=144 factor=1.2 n_run=173
+2026-11-03 20:05:22 CELL p326 0.6 s scenario=P4 type=proportion theta0=0.85 theta1=0.93 m=1 rho=0 n_planned=131 factor=1 n_run=131
+2026-11-03 20:05:25 CELL p338 12.8 s scenario=L4 type=list theta0=0.9 theta1=0.95 m=4 rho=0.5 n_planned=150 factor=1 n_run=150
+2026-11-03 20:05:25 CELL p347 12.4 s scenario=L7 type=list theta0=0.85 theta1=0.9 m=4 rho=0.2 n_planned=146 factor=1 n_run=146
+2026-11-03 20:05:29 CELL p330 12.1 s scenario=L1 type=list theta0=0.9 theta1=0.95 m=2 rho=0 n_planned=120 factor=1.2 n_run=144
+2026-11-03 20:05:30 CELL a003 8.1 s n=100 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:05:32 CELL p332 12.3 s scenario=L2 type=list theta0=0.9 theta1=0.95 m=2 rho=0.2 n_planned=144 factor=1 n_run=144
+2026-11-03 20:05:33 CELL a008 8.1 s n=100 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:05:33 CELL a013 8.3 s n=100 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:05:38 CELL a022 8.3 s n=100 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:40 CELL a026 8.3 s n=100 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:41 CELL a030 8.3 s n=100 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:42 CELL a034 8.2 s n=100 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:43 CELL a018 13.7 s n=100 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:05:47 CELL a038 8.3 s n=100 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:49 CELL a042 8.3 s n=100 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:50 CELL a046 8.4 s n=100 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:50 CELL a050 8.4 s n=100 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:05:51 CELL a054 8.3 s n=100 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:05:55 CELL a058 8.5 s n=100 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:05:57 CELL a062 8.4 s n=100 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:05:58 CELL a066 8.6 s n=100 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:05:58 CELL a070 8.4 s n=100 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:05:59 CELL a074 8.4 s n=100 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:06:03 CELL a078 8.4 s n=100 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:06:06 CELL a082 8.4 s n=100 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:06:07 CELL a086 8.4 s n=100 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:07 CELL a090 8.4 s n=100 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:08 CELL a094 8.3 s n=100 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:12 CELL a098 9.0 s n=100 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:14 CELL a102 8.2 s n=100 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:15 CELL a106 8.2 s n=100 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:15 CELL a110 8.2 s n=100 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:16 CELL a114 8.5 s n=100 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:06:17 CELL a117 4.3 s n=100 theta=0.9 m=4 rho=0.2 prevalence=0.5 type=list grid=a
+2026-11-03 20:06:24 CELL p329 10.1 s scenario=L1 type=list theta0=0.9 theta1=0.95 m=2 rho=0 n_planned=120 factor=1 n_run=120
+2026-11-03 20:06:25 CELL p342 10.1 s scenario=L5 type=list theta0=0.85 theta1=0.93 m=2 rho=0.5 n_planned=99 factor=1.2 n_run=119
+2026-11-03 20:06:25 CELL p337 10.1 s scenario=L4 type=list theta0=0.9 theta1=0.95 m=4 rho=0.5 n_planned=150 factor=0.8 n_run=120
+2026-11-03 20:06:26 CELL p325 0.6 s scenario=P4 type=proportion theta0=0.85 theta1=0.93 m=1 rho=0 n_planned=131 factor=0.8 n_run=105
+2026-11-03 20:06:26 CELL p346 9.8 s scenario=L7 type=list theta0=0.85 theta1=0.9 m=4 rho=0.2 n_planned=146 factor=0.8 n_run=117
+2026-11-03 20:06:26 CELL p331 9.7 s scenario=L2 type=list theta0=0.9 theta1=0.95 m=2 rho=0.2 n_planned=144 factor=0.8 n_run=115
+2026-11-03 20:06:27 CELL p321 0.7 s scenario=P2 type=proportion theta0=0.9 theta1=0.98 m=1 rho=0 n_planned=78 factor=1.2 n_run=94
+2026-11-03 20:06:34 CELL p341 8.5 s scenario=L5 type=list theta0=0.85 theta1=0.93 m=2 rho=0.5 n_planned=99 factor=1 n_run=99
+2026-11-03 20:06:34 CELL p336 9.8 s scenario=L3 type=list theta0=0.9 theta1=0.95 m=4 rho=0.2 n_planned=96 factor=1.2 n_run=115
+2026-11-03 20:06:34 CELL p328 8.2 s scenario=L1 type=list theta0=0.9 theta1=0.95 m=2 rho=0 n_planned=120 factor=0.8 n_run=96
+2026-11-03 20:06:34 CELL p340 6.9 s scenario=L5 type=list theta0=0.85 theta1=0.93 m=2 rho=0.5 n_planned=99 factor=0.8 n_run=79
+2026-11-03 20:06:34 CELL p320 0.7 s scenario=P2 type=proportion theta0=0.9 theta1=0.98 m=1 rho=0 n_planned=78 factor=1 n_run=78
+2026-11-03 20:06:34 CELL p335 8.3 s scenario=L3 type=list theta0=0.9 theta1=0.95 m=4 rho=0.2 n_planned=96 factor=1 n_run=96
+2026-11-03 20:06:41 CELL p334 7.2 s scenario=L3 type=list theta0=0.9 theta1=0.95 m=4 rho=0.2 n_planned=96 factor=0.8 n_run=77
+2026-11-03 20:06:42 CELL b120 8.4 s n=400 theta=0.85 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:06:42 CELL b123 8.4 s n=400 theta=0.9 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:06:43 CELL b129 8.5 s n=400 theta=0.85 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:06:43 CELL b126 8.5 s n=400 theta=0.95 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:06:49 CELL b132 8.6 s n=400 theta=0.9 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:06:51 CELL b135 8.5 s n=400 theta=0.95 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:06:51 CELL b138 8.5 s n=400 theta=0.85 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:06:51 CELL b144 8.4 s n=400 theta=0.95 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:06:51 CELL b141 8.4 s n=400 theta=0.9 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:06:58 CELL b147 8.4 s n=400 theta=0.85 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:06:59 CELL b150 8.4 s n=400 theta=0.9 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:06:59 CELL b153 8.4 s n=400 theta=0.95 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:07:00 CELL b156 8.3 s n=400 theta=0.85 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:07:00 CELL b159 8.3 s n=400 theta=0.9 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:07:07 CELL b162 8.7 s n=400 theta=0.95 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:07:08 CELL b165 8.8 s n=400 theta=0.85 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:07:08 CELL b168 8.8 s n=400 theta=0.9 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:07:08 CELL b174 8.8 s n=400 theta=0.85 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:07:08 CELL b171 8.8 s n=400 theta=0.95 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:07:15 CELL b177 8.7 s n=400 theta=0.9 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:07:17 CELL b180 8.8 s n=400 theta=0.95 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:07:17 CELL b183 8.9 s n=400 theta=0.85 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:07:17 CELL b186 8.8 s n=400 theta=0.9 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:07:17 CELL b189 8.8 s n=400 theta=0.95 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:07:24 CELL b192 8.5 s n=400 theta=0.85 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:07:25 CELL b195 8.2 s n=400 theta=0.9 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:07:25 CELL b198 8.2 s n=400 theta=0.95 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:07:25 CELL b201 8.2 s n=400 theta=0.85 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:07:26 CELL b204 8.3 s n=400 theta=0.9 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:07:32 CELL b207 8.4 s n=400 theta=0.95 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:07:34 CELL b210 8.5 s n=400 theta=0.85 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:07:34 CELL b213 9.1 s n=400 theta=0.9 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:07:34 CELL b216 9.0 s n=400 theta=0.95 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:07:35 CELL b219 9.1 s n=400 theta=0.85 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:07:41 CELL b222 8.8 s n=400 theta=0.9 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:07:42 CELL b225 8.8 s n=400 theta=0.95 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:07:43 CELL b228 8.2 s n=400 theta=0.85 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:07:43 CELL b231 8.2 s n=400 theta=0.9 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:07:43 CELL b234 8.3 s n=400 theta=0.95 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:07:49 CELL b237 8.3 s n=400 theta=0.85 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:07:51 CELL b240 8.4 s n=400 theta=0.9 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:07:51 CELL b243 8.3 s n=400 theta=0.95 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:07:51 CELL b246 8.4 s n=400 theta=0.85 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:07:52 CELL b249 8.5 s n=400 theta=0.9 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:07:58 CELL b252 8.3 s n=400 theta=0.95 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:07:59 CELL b255 8.4 s n=400 theta=0.85 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:07:59 CELL b258 8.4 s n=400 theta=0.9 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:07:59 CELL b261 8.4 s n=400 theta=0.95 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:08:00 CELL b264 8.3 s n=400 theta=0.85 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:08:06 CELL b267 8.1 s n=400 theta=0.9 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:08:07 CELL b270 7.9 s n=400 theta=0.95 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:08:07 CELL b276 7.8 s n=400 theta=0.9 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:08:07 CELL b273 7.9 s n=400 theta=0.85 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:08:08 CELL b279 7.7 s n=400 theta=0.95 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:08:10 CELL a002 4.1 s n=50 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:08:11 CELL a007 4.1 s n=50 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:08:12 CELL a021 4.2 s n=50 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:13 CELL a012 5.7 s n=50 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:08:14 CELL a025 4.1 s n=50 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:15 CELL a029 4.0 s n=50 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:16 CELL a033 4.3 s n=50 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:17 CELL a037 3.9 s n=50 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:18 CELL a017 10.3 s n=50 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:08:18 CELL a041 3.9 s n=50 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:19 CELL a045 3.9 s n=50 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:20 CELL a049 3.9 s n=50 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:08:21 CELL a053 4.1 s n=50 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:22 CELL a057 4.2 s n=50 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:22 CELL a061 4.2 s n=50 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:24 CELL a069 4.3 s n=50 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:25 CELL a065 5.5 s n=50 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:25 CELL a073 4.3 s n=50 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:26 CELL a077 4.3 s n=50 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:27 CELL a081 4.6 s n=50 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:08:29 CELL a085 4.4 s n=50 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:29 CELL a089 4.4 s n=50 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:30 CELL a093 4.7 s n=50 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:31 CELL a101 4.6 s n=50 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:32 CELL p319 0.6 s scenario=P2 type=proportion theta0=0.9 theta1=0.98 m=1 rho=0 n_planned=78 factor=0.8 n_run=62
+2026-11-03 20:08:34 CELL a105 4.8 s n=50 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:34 CELL a109 4.9 s n=50 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:34 CELL a097 8.1 s n=50 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:36 CELL a113 6.3 s n=50 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:08:38 CELL p345 3.9 s scenario=L6 type=list theta0=0.85 theta1=0.93 m=4 rho=0 n_planned=33 factor=1.2 n_run=40
+2026-11-03 20:08:39 CELL p351 6.8 s scenario=L8 type=list theta0=0.9 theta1=0.98 m=2 rho=0.2 n_planned=47 factor=1.2 n_run=56
+2026-11-03 20:08:40 CELL p350 6.1 s scenario=L8 type=list theta0=0.9 theta1=0.98 m=2 rho=0.2 n_planned=47 factor=1 n_run=47
+2026-11-03 20:08:40 CELL p349 5.6 s scenario=L8 type=list theta0=0.9 theta1=0.98 m=2 rho=0.2 n_planned=47 factor=0.8 n_run=38
+2026-11-03 20:08:41 CELL b119 5.0 s n=200 theta=0.85 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:08:43 CELL b122 5.0 s n=200 theta=0.9 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:08:43 CELL b125 4.8 s n=200 theta=0.95 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:08:45 CELL b131 5.0 s n=200 theta=0.9 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:08:45 CELL b128 5.1 s n=200 theta=0.85 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:08:47 CELL b134 5.2 s n=200 theta=0.95 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:08:48 CELL b137 5.0 s n=200 theta=0.85 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:08:48 CELL b140 5.0 s n=200 theta=0.9 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:08:50 CELL b143 5.2 s n=200 theta=0.95 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:08:50 CELL b146 5.3 s n=200 theta=0.85 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:08:52 CELL b149 5.0 s n=200 theta=0.9 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:08:53 CELL b152 5.1 s n=200 theta=0.95 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:08:54 CELL b155 5.1 s n=200 theta=0.85 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:08:55 CELL b158 4.9 s n=200 theta=0.9 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:08:55 CELL b161 5.0 s n=200 theta=0.95 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:08:57 CELL b164 5.1 s n=200 theta=0.85 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:08:58 CELL b167 5.2 s n=200 theta=0.9 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:08:59 CELL b170 5.3 s n=200 theta=0.95 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:00 CELL b173 5.1 s n=200 theta=0.85 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:00 CELL b176 5.0 s n=200 theta=0.9 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:01 CELL b179 4.9 s n=200 theta=0.95 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:03 CELL b182 4.8 s n=200 theta=0.85 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:04 CELL b185 4.7 s n=200 theta=0.9 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:05 CELL b188 4.7 s n=200 theta=0.95 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:05 CELL b191 4.7 s n=200 theta=0.85 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:06 CELL b194 4.8 s n=200 theta=0.9 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:08 CELL b197 4.8 s n=200 theta=0.95 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:08 CELL b200 4.8 s n=200 theta=0.85 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:10 CELL b203 4.7 s n=200 theta=0.9 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:10 CELL b206 4.7 s n=200 theta=0.95 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:11 CELL b209 4.8 s n=200 theta=0.85 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:09:13 CELL b212 4.8 s n=200 theta=0.9 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:09:13 CELL b215 4.7 s n=200 theta=0.95 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:09:14 CELL b218 4.9 s n=200 theta=0.85 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:09:15 CELL b221 4.8 s n=200 theta=0.9 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:09:16 CELL b224 4.9 s n=200 theta=0.95 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:09:17 CELL b227 4.8 s n=200 theta=0.85 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:09:18 CELL b230 4.8 s n=200 theta=0.9 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:09:19 CELL b233 4.9 s n=200 theta=0.95 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:09:19 CELL b236 4.9 s n=200 theta=0.85 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:09:21 CELL b239 4.9 s n=200 theta=0.9 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:09:22 CELL b242 4.7 s n=200 theta=0.95 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:09:23 CELL b245 4.9 s n=200 theta=0.85 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:09:24 CELL b248 5.0 s n=200 theta=0.9 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:09:24 CELL b251 5.0 s n=200 theta=0.95 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:09:26 CELL b254 4.9 s n=200 theta=0.85 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:09:27 CELL b257 5.2 s n=200 theta=0.9 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:09:28 CELL b260 5.1 s n=200 theta=0.95 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:09:30 CELL b266 5.1 s n=200 theta=0.9 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:09:30 CELL b263 5.3 s n=200 theta=0.85 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:09:31 CELL b269 5.1 s n=200 theta=0.95 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:09:32 CELL b272 5.0 s n=200 theta=0.85 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:09:33 CELL p344 3.5 s scenario=L6 type=list theta0=0.85 theta1=0.93 m=4 rho=0 n_planned=33 factor=1 n_run=33
+2026-11-03 20:09:33 CELL b275 5.3 s n=200 theta=0.9 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:09:34 CELL p343 3.0 s scenario=L6 type=list theta0=0.85 theta1=0.93 m=4 rho=0 n_planned=33 factor=0.8 n_run=26
+2026-11-03 20:09:35 CELL b278 5.1 s n=200 theta=0.95 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:09:35 CELL a001 2.4 s n=20 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:09:36 CELL a006 2.9 s n=20 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:09:38 CELL b118 3.3 s n=100 theta=0.85 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:09:38 CELL b121 3.3 s n=100 theta=0.9 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:09:38 CELL a011 4.7 s n=20 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:09:39 CELL b124 3.3 s n=100 theta=0.95 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:09:41 CELL b130 3.3 s n=100 theta=0.9 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:09:41 CELL b127 3.4 s n=100 theta=0.85 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:09:41 CELL a016 7.4 s n=20 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:09:41 CELL b133 3.4 s n=100 theta=0.95 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:09:43 CELL b136 3.4 s n=100 theta=0.85 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:09:45 CELL b139 3.4 s n=100 theta=0.9 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:09:45 CELL b145 3.4 s n=100 theta=0.85 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:09:45 CELL b142 3.4 s n=100 theta=0.95 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:09:45 CELL b148 3.4 s n=100 theta=0.9 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:09:46 CELL b151 3.3 s n=100 theta=0.95 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:09:48 CELL b154 3.4 s n=100 theta=0.85 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:48 CELL b157 3.4 s n=100 theta=0.9 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:48 CELL b160 3.4 s n=100 theta=0.95 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:48 CELL b163 3.4 s n=100 theta=0.85 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:50 CELL b166 3.6 s n=100 theta=0.9 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:51 CELL b172 3.3 s n=100 theta=0.85 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:51 CELL b169 3.4 s n=100 theta=0.95 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:09:51 CELL b175 3.3 s n=100 theta=0.9 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:52 CELL b178 3.3 s n=100 theta=0.95 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:53 CELL b181 3.3 s n=100 theta=0.85 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:55 CELL b184 3.4 s n=100 theta=0.9 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:55 CELL b187 3.4 s n=100 theta=0.95 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:09:55 CELL b190 3.5 s n=100 theta=0.85 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:55 CELL b193 3.5 s n=100 theta=0.9 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:56 CELL b196 3.4 s n=100 theta=0.95 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:58 CELL b199 3.3 s n=100 theta=0.85 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:58 CELL b202 3.2 s n=100 theta=0.9 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:58 CELL b205 3.3 s n=100 theta=0.95 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:09:58 CELL b208 3.2 s n=100 theta=0.85 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:10:00 CELL b211 3.4 s n=100 theta=0.9 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:10:02 CELL b217 3.6 s n=100 theta=0.85 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:10:02 CELL b214 3.6 s n=100 theta=0.95 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:10:02 CELL b220 3.6 s n=100 theta=0.9 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:10:02 CELL b223 3.6 s n=100 theta=0.95 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:10:03 CELL b226 3.4 s n=100 theta=0.85 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:10:05 CELL b229 3.3 s n=100 theta=0.9 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:10:05 CELL b235 3.3 s n=100 theta=0.85 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:10:05 CELL b232 3.3 s n=100 theta=0.95 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:10:05 CELL b238 3.3 s n=100 theta=0.9 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:10:06 CELL b241 3.0 s n=100 theta=0.95 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:10:08 CELL b244 3.0 s n=100 theta=0.85 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:10:08 CELL b247 3.0 s n=100 theta=0.9 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:10:08 CELL b250 3.0 s n=100 theta=0.95 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:10:08 CELL b253 3.0 s n=100 theta=0.85 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:10:09 CELL b256 3.3 s n=100 theta=0.9 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:10:11 CELL b259 3.3 s n=100 theta=0.95 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:10:11 CELL b262 3.3 s n=100 theta=0.85 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:10:11 CELL b265 3.3 s n=100 theta=0.9 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:10:12 CELL b268 3.3 s n=100 theta=0.95 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:10:13 CELL b271 3.1 s n=100 theta=0.85 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:10:14 CELL b274 2.6 s n=100 theta=0.9 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:10:14 CELL b277 2.6 s n=100 theta=0.95 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:10:14 GRIDS end: 855.0 s wall
+2026-11-03 20:10:14 UNDEFINED A=0 B=0 C=800 planner=0
+2026-11-03 20:10:14 THETA_TRUE max |theta_true_metric - theta| = 7.30e-04
+2026-11-03 20:10:14 DELTA_TRUE range by target: [-0.0003, 0.0002] list 0; [0.0296, 0.0299] list 0.03; [0.0498, 0.0504] list 0.05; [-0.0003, -0.0000] proportion 0; [0.0297, 0.0304] proportion 0.03; [0.0499, 0.0501] proportion 0.05
+2026-11-03 20:10:14 END total 862.8 s, 6289 keys
+2026-11-03 20:29:34 START reps=2000 B=1000 cores=5 seed_base=20261029
+2026-11-03 20:29:36 SPEEDUP 1 core 1.78 s, 5 cores 0.79 s, ratio 2.26
+2026-11-03 20:29:36 DEPLOYMENT and planner keys computed (171 keys)
+2026-11-03 20:29:44 CALIBRATE type=list delta=0.00 delta_logit=0.000000
+2026-11-03 20:29:44 CALIBRATE type=proportion delta=0.00 delta_logit=0.000000
+2026-11-03 20:29:44 CALIBRATE type=list delta=0.03 delta_logit=0.472533
+2026-11-03 20:29:44 CALIBRATE type=proportion delta=0.03 delta_logit=0.390940
+2026-11-03 20:29:44 CALIBRATE type=list delta=0.05 delta_logit=0.893630
+2026-11-03 20:29:44 CALIBRATE type=proportion delta=0.05 delta_logit=0.746999
+2026-11-03 20:29:44 GRIDS begin: 351 cells (A 117, B 162, C 36, planner 36)
+2026-11-03 20:30:57 CELL c296 73.5 s type=list n=400 delta=0.05 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:30:58 CELL c290 74.6 s type=list n=400 delta=0.03 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:30:58 CELL c284 74.8 s type=list n=400 delta=0 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:31:00 CELL c291 76.0 s type=proportion n=400 delta=0.03 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:31:00 CELL c285 76.6 s type=proportion n=400 delta=0 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:32:15 CELL c302 76.6 s type=list n=400 delta=0 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:32:15 CELL c297 77.9 s type=proportion n=400 delta=0.05 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:32:16 CELL c308 76.4 s type=list n=400 delta=0.03 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:32:16 CELL c303 77.7 s type=proportion n=400 delta=0 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:32:18 CELL c309 77.5 s type=proportion n=400 delta=0.03 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:33:15 CELL a005 58.8 s n=400 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:33:16 CELL a010 59.4 s n=400 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:33:17 CELL a015 58.9 s n=400 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:33:33 CELL c314 77.8 s type=list n=400 delta=0.05 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:33:34 CELL c315 78.6 s type=proportion n=400 delta=0.05 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:34:02 CELL a020 46.9 s n=400 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:34:02 CELL a024 46.6 s n=400 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:34:03 CELL a028 46.5 s n=400 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:34:19 CELL a032 46.0 s n=400 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:34:19 CELL a036 45.5 s n=400 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:34:48 CELL a040 45.9 s n=400 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:34:48 CELL a044 45.9 s n=400 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:34:49 CELL a048 45.6 s n=400 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:35:05 CELL a052 46.7 s n=400 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:35:06 CELL a056 47.0 s n=400 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:35:31 CELL a060 43.7 s n=400 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:35:32 CELL a064 43.9 s n=400 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:35:32 CELL a068 43.5 s n=400 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:35:46 CELL a072 40.7 s n=400 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:35:47 CELL a076 40.3 s n=400 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:36:09 CELL a080 37.8 s n=400 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:36:10 CELL a084 37.9 s n=400 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:36:10 CELL a088 37.8 s n=400 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:22 CELL a092 36.4 s n=400 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:23 CELL a096 36.6 s n=400 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:45 CELL a100 35.3 s n=400 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:45 CELL a104 35.3 s n=400 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:45 CELL p324 0.7 s scenario=P3 type=proportion theta0=0.85 theta1=0.9 m=1 rho=0 n_planned=363 factor=1.2 n_run=436
+2026-11-03 20:36:45 CELL a108 35.3 s n=400 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:58 CELL a112 35.9 s n=400 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:36:59 CELL a116 35.8 s n=400 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:37:10 CELL c282 25.1 s type=list n=200 delta=0 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:37:11 CELL c288 25.0 s type=list n=200 delta=0.03 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:37:11 CELL c283 25.8 s type=proportion n=200 delta=0 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:37:24 CELL c289 26.0 s type=proportion n=200 delta=0.03 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:37:24 CELL c294 25.4 s type=list n=200 delta=0.05 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:37:37 CELL c300 26.6 s type=list n=200 delta=0 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:37:38 CELL c295 27.2 s type=proportion n=200 delta=0.05 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:37:38 CELL c301 26.7 s type=proportion n=200 delta=0 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:37:39 CELL p323 0.9 s scenario=P3 type=proportion theta0=0.85 theta1=0.9 m=1 rho=0 n_planned=363 factor=1 n_run=363
+2026-11-03 20:37:40 CELL p322 0.9 s scenario=P3 type=proportion theta0=0.85 theta1=0.9 m=1 rho=0 n_planned=363 factor=0.8 n_run=290
+2026-11-03 20:37:41 CELL p318 0.7 s scenario=P1 type=proportion theta0=0.9 theta1=0.95 m=1 rho=0 n_planned=239 factor=1.2 n_run=287
+2026-11-03 20:37:52 CELL c306 27.2 s type=list n=200 delta=0.03 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:37:52 CELL c307 27.9 s type=proportion n=200 delta=0.03 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:37:59 CELL a004 18.3 s n=200 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:38:03 CELL c312 25.8 s type=list n=200 delta=0.05 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:38:04 CELL c313 26.2 s type=proportion n=200 delta=0.05 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:38:09 CELL a009 17.7 s n=200 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:38:10 CELL a014 17.6 s n=200 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:38:16 CELL a019 17.5 s n=200 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:38:21 CELL a023 17.7 s n=200 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:22 CELL a027 17.8 s n=200 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:27 CELL a031 18.0 s n=200 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:28 CELL a035 18.0 s n=200 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:35 CELL a039 18.3 s n=200 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:39 CELL a043 18.2 s n=200 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:40 CELL a047 18.2 s n=200 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:45 CELL a051 18.0 s n=200 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:38:46 CELL a055 18.0 s n=200 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:38:53 CELL a059 18.0 s n=200 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:38:57 CELL a063 18.2 s n=200 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:38:58 CELL a067 18.2 s n=200 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:39:04 CELL a071 18.8 s n=200 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:39:05 CELL a075 18.8 s n=200 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:39:11 CELL a079 18.3 s n=200 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:39:16 CELL a083 18.4 s n=200 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:39:16 CELL a087 18.1 s n=200 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:22 CELL a091 17.7 s n=200 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:23 CELL a095 17.7 s n=200 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:29 CELL a099 18.1 s n=200 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:30 CELL p317 0.8 s scenario=P1 type=proportion theta0=0.9 theta1=0.95 m=1 rho=0 n_planned=239 factor=1 n_run=239
+2026-11-03 20:39:34 CELL a103 18.6 s n=200 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:35 CELL a107 18.8 s n=200 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:41 CELL a111 18.9 s n=200 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:41 CELL a115 18.8 s n=200 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:39:45 CELL c280 14.9 s type=list n=100 delta=0 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:39:50 CELL c281 15.4 s type=proportion n=100 delta=0 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:39:50 CELL c286 14.8 s type=list n=100 delta=0.03 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:39:58 CELL c292 16.6 s type=list n=100 delta=0.05 kappa=0.5 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:39:58 CELL c287 17.6 s type=proportion n=100 delta=0.03 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:40:03 CELL c293 18.3 s type=proportion n=100 delta=0.05 kappa=0.5 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:40:06 CELL c299 16.6 s type=proportion n=100 delta=0 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0
+2026-11-03 20:40:07 CELL c298 17.8 s type=list n=100 delta=0 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0
+2026-11-03 20:40:08 CELL p316 0.9 s scenario=P1 type=proportion theta0=0.9 theta1=0.95 m=1 rho=0 n_planned=239 factor=0.8 n_run=191
+2026-11-03 20:40:14 CELL c304 16.4 s type=list n=100 delta=0.03 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.472533405360216
+2026-11-03 20:40:15 CELL c305 16.7 s type=proportion n=100 delta=0.03 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.390939627906221
+2026-11-03 20:40:18 CELL c310 15.4 s type=list n=100 delta=0.05 kappa=0.9 theta_a=0.9 m=2 rho=0.2 grid=c delta_logit=0.893630007542328
+2026-11-03 20:40:19 CELL p327 0.8 s scenario=P4 type=proportion theta0=0.85 theta1=0.93 m=1 rho=0 n_planned=131 factor=1.2 n_run=157
+2026-11-03 20:40:23 CELL c311 16.5 s type=proportion n=100 delta=0.05 kappa=0.9 theta_a=0.9 m=1 rho=0 grid=c delta_logit=0.74699919028373
+2026-11-03 20:40:27 CELL p339 18.9 s scenario=L4 type=list theta0=0.9 theta1=0.95 m=4 rho=0.5 n_planned=150 factor=1.2 n_run=180
+2026-11-03 20:40:32 CELL p348 18.0 s scenario=L7 type=list theta0=0.85 theta1=0.9 m=4 rho=0.2 n_planned=146 factor=1.2 n_run=175
+2026-11-03 20:40:33 CELL p333 17.7 s scenario=L2 type=list theta0=0.9 theta1=0.95 m=2 rho=0.2 n_planned=144 factor=1.2 n_run=173
+2026-11-03 20:40:34 CELL p326 1.1 s scenario=P4 type=proportion theta0=0.85 theta1=0.93 m=1 rho=0 n_planned=131 factor=1 n_run=131
+2026-11-03 20:40:35 CELL p338 15.7 s scenario=L4 type=list theta0=0.9 theta1=0.95 m=4 rho=0.5 n_planned=150 factor=1 n_run=150
+2026-11-03 20:40:37 CELL p347 14.6 s scenario=L7 type=list theta0=0.85 theta1=0.9 m=4 rho=0.2 n_planned=146 factor=1 n_run=146
+2026-11-03 20:40:41 CELL p330 14.2 s scenario=L1 type=list theta0=0.9 theta1=0.95 m=2 rho=0 n_planned=120 factor=1.2 n_run=144
+2026-11-03 20:40:43 CELL a003 9.3 s n=100 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:40:44 CELL a008 9.3 s n=100 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:40:47 CELL p332 14.4 s scenario=L2 type=list theta0=0.9 theta1=0.95 m=2 rho=0.2 n_planned=144 factor=1 n_run=144
+2026-11-03 20:40:47 CELL a013 9.5 s n=100 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:40:51 CELL a018 9.6 s n=100 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:40:53 CELL a022 9.6 s n=100 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:40:54 CELL a026 9.7 s n=100 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:40:57 CELL a030 10.0 s n=100 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:40:57 CELL a034 10.1 s n=100 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:41:02 CELL a038 11.0 s n=100 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:41:05 CELL a042 11.9 s n=100 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:41:05 CELL a046 11.3 s n=100 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:41:08 CELL a050 10.9 s n=100 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:41:08 CELL a054 10.9 s n=100 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:13 CELL a058 10.8 s n=100 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:15 CELL a062 10.1 s n=100 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:15 CELL a066 10.2 s n=100 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:18 CELL a070 10.1 s n=100 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:18 CELL a074 10.3 s n=100 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:22 CELL a078 9.6 s n=100 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:24 CELL a082 9.6 s n=100 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:41:25 CELL a086 9.7 s n=100 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:27 CELL a090 9.6 s n=100 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:28 CELL a094 9.5 s n=100 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:32 CELL a098 9.5 s n=100 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:34 CELL a102 9.8 s n=100 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:35 CELL a106 9.9 s n=100 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:37 CELL a110 9.7 s n=100 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:37 CELL a117 5.3 s n=100 theta=0.9 m=4 rho=0.2 prevalence=0.5 type=list grid=a
+2026-11-03 20:41:38 CELL a114 9.6 s n=100 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:41:46 CELL p329 11.6 s scenario=L1 type=list theta0=0.9 theta1=0.95 m=2 rho=0 n_planned=120 factor=1 n_run=120
+2026-11-03 20:41:47 CELL p337 11.7 s scenario=L4 type=list theta0=0.9 theta1=0.95 m=4 rho=0.5 n_planned=150 factor=0.8 n_run=120
+2026-11-03 20:41:48 CELL p325 0.8 s scenario=P4 type=proportion theta0=0.85 theta1=0.93 m=1 rho=0 n_planned=131 factor=0.8 n_run=105
+2026-11-03 20:41:49 CELL p346 11.5 s scenario=L7 type=list theta0=0.85 theta1=0.9 m=4 rho=0.2 n_planned=146 factor=0.8 n_run=117
+2026-11-03 20:41:49 CELL p342 11.7 s scenario=L5 type=list theta0=0.85 theta1=0.93 m=2 rho=0.5 n_planned=99 factor=1.2 n_run=119
+2026-11-03 20:41:49 CELL p331 11.4 s scenario=L2 type=list theta0=0.9 theta1=0.95 m=2 rho=0.2 n_planned=144 factor=0.8 n_run=115
+2026-11-03 20:41:50 CELL p321 0.8 s scenario=P2 type=proportion theta0=0.9 theta1=0.98 m=1 rho=0 n_planned=78 factor=1.2 n_run=94
+2026-11-03 20:41:57 CELL p336 11.3 s scenario=L3 type=list theta0=0.9 theta1=0.95 m=4 rho=0.2 n_planned=96 factor=1.2 n_run=115
+2026-11-03 20:41:58 CELL p341 10.0 s scenario=L5 type=list theta0=0.85 theta1=0.93 m=2 rho=0.5 n_planned=99 factor=1 n_run=99
+2026-11-03 20:41:58 CELL p340 8.2 s scenario=L5 type=list theta0=0.85 theta1=0.93 m=2 rho=0.5 n_planned=99 factor=0.8 n_run=79
+2026-11-03 20:41:58 CELL p320 1.0 s scenario=P2 type=proportion theta0=0.9 theta1=0.98 m=1 rho=0 n_planned=78 factor=1 n_run=78
+2026-11-03 20:41:58 CELL p328 9.7 s scenario=L1 type=list theta0=0.9 theta1=0.95 m=2 rho=0 n_planned=120 factor=0.8 n_run=96
+2026-11-03 20:41:59 CELL p335 9.8 s scenario=L3 type=list theta0=0.9 theta1=0.95 m=4 rho=0.2 n_planned=96 factor=1 n_run=96
+2026-11-03 20:42:07 CELL p334 9.9 s scenario=L3 type=list theta0=0.9 theta1=0.95 m=4 rho=0.2 n_planned=96 factor=0.8 n_run=77
+2026-11-03 20:42:10 CELL b123 12.1 s n=400 theta=0.9 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:42:10 CELL b126 11.9 s n=400 theta=0.95 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:42:10 CELL b120 12.4 s n=400 theta=0.85 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:42:11 CELL b129 12.3 s n=400 theta=0.85 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:42:18 CELL b132 10.3 s n=400 theta=0.9 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:42:21 CELL b135 10.3 s n=400 theta=0.95 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:42:21 CELL b141 10.3 s n=400 theta=0.9 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:42:21 CELL b138 10.4 s n=400 theta=0.85 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:42:21 CELL b144 10.4 s n=400 theta=0.95 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:42:28 CELL b147 10.3 s n=400 theta=0.85 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:42:31 CELL b150 10.0 s n=400 theta=0.9 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:42:31 CELL b153 10.0 s n=400 theta=0.95 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:42:31 CELL b156 10.0 s n=400 theta=0.85 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:42:31 CELL b159 10.1 s n=400 theta=0.9 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:42:38 CELL b162 10.2 s n=400 theta=0.95 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:42:41 CELL b165 10.4 s n=400 theta=0.85 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:42:41 CELL b171 10.3 s n=400 theta=0.95 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:42:41 CELL b168 10.4 s n=400 theta=0.9 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:42:42 CELL b174 10.2 s n=400 theta=0.85 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:42:48 CELL b177 10.1 s n=400 theta=0.9 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:42:51 CELL b183 9.9 s n=400 theta=0.85 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:42:51 CELL b180 10.0 s n=400 theta=0.95 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:42:51 CELL b186 10.0 s n=400 theta=0.9 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:42:52 CELL b189 10.0 s n=400 theta=0.95 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:42:58 CELL b192 10.1 s n=400 theta=0.85 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:43:01 CELL b198 10.1 s n=400 theta=0.95 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:43:01 CELL b195 10.2 s n=400 theta=0.9 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:43:01 CELL b201 10.2 s n=400 theta=0.85 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:43:02 CELL b204 10.2 s n=400 theta=0.9 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:43:09 CELL b207 10.5 s n=400 theta=0.95 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:43:12 CELL b210 10.7 s n=400 theta=0.85 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:43:12 CELL b216 10.8 s n=400 theta=0.95 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:43:12 CELL b213 11.0 s n=400 theta=0.9 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:43:13 CELL b219 11.3 s n=400 theta=0.85 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:43:21 CELL b222 12.0 s n=400 theta=0.9 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:43:23 CELL b225 11.3 s n=400 theta=0.95 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:43:23 CELL b228 11.3 s n=400 theta=0.85 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:43:24 CELL b231 11.4 s n=400 theta=0.9 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:43:24 CELL b234 11.0 s n=400 theta=0.95 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:43:31 CELL b237 10.2 s n=400 theta=0.85 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:43:33 CELL b240 10.1 s n=400 theta=0.9 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:43:34 CELL b243 10.3 s n=400 theta=0.95 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:43:34 CELL b246 10.4 s n=400 theta=0.85 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:43:35 CELL b249 10.3 s n=400 theta=0.9 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:43:42 CELL b252 10.7 s n=400 theta=0.95 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:43:44 CELL b255 10.6 s n=400 theta=0.85 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:43:44 CELL b258 10.5 s n=400 theta=0.9 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:43:45 CELL b261 10.5 s n=400 theta=0.95 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:43:45 CELL b264 10.5 s n=400 theta=0.85 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:43:52 CELL b267 10.2 s n=400 theta=0.9 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:43:54 CELL b270 10.3 s n=400 theta=0.95 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:43:54 CELL b273 10.2 s n=400 theta=0.85 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:43:55 CELL b276 10.3 s n=400 theta=0.9 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:43:55 CELL b279 10.1 s n=400 theta=0.95 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:43:57 CELL a002 5.0 s n=50 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:43:59 CELL a007 5.1 s n=50 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:44:00 CELL a012 5.2 s n=50 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:44:00 CELL a017 5.0 s n=50 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:44:01 CELL a021 5.8 s n=50 theta=0.85 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:03 CELL a025 5.7 s n=50 theta=0.9 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:05 CELL a029 5.7 s n=50 theta=0.95 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:05 CELL a033 5.6 s n=50 theta=0.98 m=2 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:06 CELL a037 5.6 s n=50 theta=0.85 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:06 CELL a041 5.3 s n=50 theta=0.9 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:08 CELL a045 5.2 s n=50 theta=0.95 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:10 CELL a049 4.8 s n=50 theta=0.98 m=4 rho=0 prevalence=1 type=list grid=a
+2026-11-03 20:44:10 CELL a053 4.9 s n=50 theta=0.85 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:11 CELL a057 5.0 s n=50 theta=0.9 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:11 CELL a061 4.9 s n=50 theta=0.95 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:13 CELL a065 4.8 s n=50 theta=0.98 m=2 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:14 CELL a069 4.7 s n=50 theta=0.85 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:15 CELL a073 4.7 s n=50 theta=0.9 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:15 CELL a077 4.7 s n=50 theta=0.95 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:16 CELL a081 4.6 s n=50 theta=0.98 m=4 rho=0.2 prevalence=1 type=list grid=a
+2026-11-03 20:44:18 CELL a085 4.7 s n=50 theta=0.85 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:19 CELL a089 4.7 s n=50 theta=0.9 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:20 CELL a093 4.8 s n=50 theta=0.95 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:20 CELL a097 4.8 s n=50 theta=0.98 m=2 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:21 CELL p319 0.8 s scenario=P2 type=proportion theta0=0.9 theta1=0.98 m=1 rho=0 n_planned=78 factor=0.8 n_run=62
+2026-11-03 20:44:21 CELL a101 4.9 s n=50 theta=0.85 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:22 CELL a105 4.8 s n=50 theta=0.9 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:24 CELL a109 4.8 s n=50 theta=0.95 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:25 CELL a113 4.7 s n=50 theta=0.98 m=4 rho=0.5 prevalence=1 type=list grid=a
+2026-11-03 20:44:25 CELL p350 4.3 s scenario=L8 type=list theta0=0.9 theta1=0.98 m=2 rho=0.2 n_planned=47 factor=1 n_run=47
+2026-11-03 20:44:26 CELL p351 5.2 s scenario=L8 type=list theta0=0.9 theta1=0.98 m=2 rho=0.2 n_planned=47 factor=1.2 n_run=56
+2026-11-03 20:44:26 CELL p345 4.0 s scenario=L6 type=list theta0=0.85 theta1=0.93 m=4 rho=0 n_planned=33 factor=1.2 n_run=40
+2026-11-03 20:44:28 CELL p349 3.6 s scenario=L8 type=list theta0=0.9 theta1=0.98 m=2 rho=0.2 n_planned=47 factor=0.8 n_run=38
+2026-11-03 20:44:30 CELL b119 5.4 s n=200 theta=0.85 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:44:31 CELL b122 5.5 s n=200 theta=0.9 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:44:32 CELL b125 5.7 s n=200 theta=0.95 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:44:32 CELL b128 5.8 s n=200 theta=0.85 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:44:34 CELL b131 6.1 s n=200 theta=0.9 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:44:36 CELL b134 6.2 s n=200 theta=0.95 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:44:37 CELL b137 6.3 s n=200 theta=0.85 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:44:38 CELL b140 6.1 s n=200 theta=0.9 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:44:38 CELL b143 6.1 s n=200 theta=0.95 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:44:40 CELL b146 6.0 s n=200 theta=0.85 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:44:42 CELL b149 6.1 s n=200 theta=0.9 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:44:43 CELL b152 6.0 s n=200 theta=0.95 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:44:44 CELL b155 6.0 s n=200 theta=0.85 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:44:44 CELL b158 6.0 s n=200 theta=0.9 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:44:46 CELL b161 5.9 s n=200 theta=0.95 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:44:48 CELL b164 5.9 s n=200 theta=0.85 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:44:49 CELL b167 6.0 s n=200 theta=0.9 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:44:50 CELL b170 6.1 s n=200 theta=0.95 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:44:50 CELL b173 5.9 s n=200 theta=0.85 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:44:52 CELL b176 6.1 s n=200 theta=0.9 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:44:54 CELL b179 6.0 s n=200 theta=0.95 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:44:55 CELL b182 6.0 s n=200 theta=0.85 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:44:56 CELL b185 5.9 s n=200 theta=0.9 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:44:56 CELL b188 5.9 s n=200 theta=0.95 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:44:57 CELL b191 5.8 s n=200 theta=0.85 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:00 CELL b194 5.6 s n=200 theta=0.9 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:01 CELL b197 5.7 s n=200 theta=0.95 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:01 CELL b200 5.6 s n=200 theta=0.85 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:02 CELL b203 5.6 s n=200 theta=0.9 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:03 CELL b206 5.7 s n=200 theta=0.95 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:05 CELL b209 5.6 s n=200 theta=0.85 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:06 CELL b212 5.6 s n=200 theta=0.9 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:07 CELL b215 5.8 s n=200 theta=0.95 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:07 CELL b218 5.7 s n=200 theta=0.85 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:09 CELL b221 5.7 s n=200 theta=0.9 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:11 CELL b224 5.7 s n=200 theta=0.95 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:12 CELL b227 5.6 s n=200 theta=0.85 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:45:13 CELL b230 5.6 s n=200 theta=0.9 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:45:13 CELL b233 5.5 s n=200 theta=0.95 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:45:14 CELL b236 5.5 s n=200 theta=0.85 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:45:17 CELL b239 5.5 s n=200 theta=0.9 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:45:17 CELL b242 5.5 s n=200 theta=0.95 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:45:18 CELL b245 5.6 s n=200 theta=0.85 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:45:19 CELL b248 5.7 s n=200 theta=0.9 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:45:20 CELL b251 5.4 s n=200 theta=0.95 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:45:22 CELL b254 5.6 s n=200 theta=0.85 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:45:23 CELL b257 5.7 s n=200 theta=0.9 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:45:24 CELL b260 5.6 s n=200 theta=0.95 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:45:24 CELL b263 5.6 s n=200 theta=0.85 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:45:25 CELL b266 5.6 s n=200 theta=0.9 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:45:28 CELL b269 5.5 s n=200 theta=0.95 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:45:28 CELL b272 5.3 s n=200 theta=0.85 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:45:29 CELL p344 3.6 s scenario=L6 type=list theta0=0.85 theta1=0.93 m=4 rho=0 n_planned=33 factor=1 n_run=33
+2026-11-03 20:45:29 CELL b275 5.5 s n=200 theta=0.9 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:45:30 CELL b278 5.4 s n=200 theta=0.95 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:45:30 CELL a001 2.1 s n=20 theta=0.85 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:45:31 CELL p343 3.1 s scenario=L6 type=list theta0=0.85 theta1=0.93 m=4 rho=0 n_planned=33 factor=0.8 n_run=26
+2026-11-03 20:45:31 CELL a006 2.1 s n=20 theta=0.9 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:45:31 CELL a011 2.0 s n=20 theta=0.95 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:45:32 CELL a016 1.9 s n=20 theta=0.98 m=1 rho=0 prevalence=1 type=proportion grid=a
+2026-11-03 20:45:34 CELL b118 3.9 s n=100 theta=0.85 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:45:35 CELL b121 3.9 s n=100 theta=0.9 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:45:35 CELL b124 3.9 s n=100 theta=0.95 m=2 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:45:35 CELL b127 4.0 s n=100 theta=0.85 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:45:36 CELL b130 4.0 s n=100 theta=0.9 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:45:38 CELL b133 3.7 s n=100 theta=0.95 m=4 rho=0 spu_ratio=1 grid=b
+2026-11-03 20:45:38 CELL b136 3.7 s n=100 theta=0.85 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:45:39 CELL b139 3.7 s n=100 theta=0.9 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:45:39 CELL b142 3.8 s n=100 theta=0.95 m=2 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:45:39 CELL b145 3.8 s n=100 theta=0.85 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:45:42 CELL b148 4.0 s n=100 theta=0.9 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:45:42 CELL b151 4.0 s n=100 theta=0.95 m=4 rho=0.2 spu_ratio=1 grid=b
+2026-11-03 20:45:43 CELL b154 3.8 s n=100 theta=0.85 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:45:43 CELL b157 3.8 s n=100 theta=0.9 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:45:43 CELL b160 3.7 s n=100 theta=0.95 m=2 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:45:46 CELL b163 3.8 s n=100 theta=0.85 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:45:46 CELL b166 3.8 s n=100 theta=0.9 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:45:46 CELL b169 3.8 s n=100 theta=0.95 m=4 rho=0.5 spu_ratio=1 grid=b
+2026-11-03 20:45:47 CELL b172 3.8 s n=100 theta=0.85 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:45:47 CELL b175 3.8 s n=100 theta=0.9 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:45:50 CELL b178 3.9 s n=100 theta=0.95 m=2 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:45:50 CELL b181 3.9 s n=100 theta=0.85 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:45:50 CELL b184 3.8 s n=100 theta=0.9 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:45:51 CELL b187 3.8 s n=100 theta=0.95 m=4 rho=0 spu_ratio=0.6 grid=b
+2026-11-03 20:45:51 CELL b190 3.8 s n=100 theta=0.85 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:54 CELL b193 3.8 s n=100 theta=0.9 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:54 CELL b196 3.8 s n=100 theta=0.95 m=2 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:54 CELL b199 3.8 s n=100 theta=0.85 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:54 CELL b202 3.8 s n=100 theta=0.9 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:55 CELL b205 3.8 s n=100 theta=0.95 m=4 rho=0.2 spu_ratio=0.6 grid=b
+2026-11-03 20:45:57 CELL b208 3.9 s n=100 theta=0.85 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:58 CELL b211 3.9 s n=100 theta=0.9 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:58 CELL b214 3.8 s n=100 theta=0.95 m=2 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:58 CELL b217 3.9 s n=100 theta=0.85 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:45:58 CELL b220 3.9 s n=100 theta=0.9 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:46:01 CELL b223 3.7 s n=100 theta=0.95 m=4 rho=0.5 spu_ratio=0.6 grid=b
+2026-11-03 20:46:02 CELL b226 3.8 s n=100 theta=0.85 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:46:02 CELL b229 3.9 s n=100 theta=0.9 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:46:02 CELL b232 3.8 s n=100 theta=0.95 m=2 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:46:02 CELL b235 3.8 s n=100 theta=0.85 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:46:05 CELL b238 4.0 s n=100 theta=0.9 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:46:06 CELL b241 4.0 s n=100 theta=0.95 m=4 rho=0 spu_ratio=0.4 grid=b
+2026-11-03 20:46:06 CELL b244 4.0 s n=100 theta=0.85 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:46:06 CELL b247 4.0 s n=100 theta=0.9 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:46:06 CELL b250 4.0 s n=100 theta=0.95 m=2 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:46:09 CELL b253 3.7 s n=100 theta=0.85 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:46:09 CELL b256 3.6 s n=100 theta=0.9 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:46:10 CELL b259 3.7 s n=100 theta=0.95 m=4 rho=0.2 spu_ratio=0.4 grid=b
+2026-11-03 20:46:10 CELL b262 3.8 s n=100 theta=0.85 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:46:10 CELL b265 3.8 s n=100 theta=0.9 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:46:12 CELL b268 3.5 s n=100 theta=0.95 m=2 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:46:13 CELL b271 3.5 s n=100 theta=0.85 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:46:13 CELL b274 3.4 s n=100 theta=0.9 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:46:13 CELL b277 3.2 s n=100 theta=0.95 m=4 rho=0.5 spu_ratio=0.4 grid=b
+2026-11-03 20:46:13 GRIDS end: 989.5 s wall
+2026-11-03 20:46:13 UNDEFINED A=0 B=0 C=800 planner=0
+2026-11-03 20:46:13 THETA_TRUE max |theta_true_metric - theta| = 7.30e-04
+2026-11-03 20:46:13 DELTA_TRUE range by target: [-0.0003, 0.0002] list 0; [0.0296, 0.0299] list 0.03; [0.0498, 0.0504] list 0.05; [-0.0003, -0.0000] proportion 0; [0.0297, 0.0304] proportion 0.03; [0.0499, 0.0501] proportion 0.05
+2026-11-03 20:46:14 END total 999.9 s, 6289 keys

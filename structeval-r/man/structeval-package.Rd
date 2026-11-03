@@ -14,6 +14,14 @@ balance of omissions and commissions (\code{\link[=test_threshold]{test_threshol
 (\code{\link[=n_threshold]{n_threshold()}}, \code{\link[=n_paired]{n_paired()}}, \code{\link[=min_certifiable]{min_certifiable()}}, the \verb{power_*()}
 functions and \code{\link[=simulate_counts]{simulate_counts()}}).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/max578/structeval}
+  \item Report bugs at \url{https://github.com/max578/structeval/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Max Moldovan \email{max.moldovan@adelaide.edu.au} (\href{https://orcid.org/0000-0001-9680-8474}{ORCID}) [copyright holder]
 

@@ -9,7 +9,7 @@
 #
 # Data        : simulated from structeval::simulate_counts() (spec section 7);
 #               deployment counts from the base paper Table 1 (spec section 9)
-# Requirements: structeval 0.1.0, jsonlite, parallel; at most 5 cores
+# Requirements: structeval 0.1.1, jsonlite, parallel; at most 5 cores
 #
 # Outputs     : sim/results/{grid_a,grid_b,grid_c,planner_validation}.csv,
 #               sim/results/grid_c_calibration.csv, sim/results/numbers.json,

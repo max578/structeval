@@ -8,8 +8,10 @@ This is the Python counterpart of the R package in `../structeval-r/`. It exists
 import pandas as pd
 import structeval as se
 
-df = pd.read_csv("data.csv", index_col="Patient ID")
-report = se.evaluate(df)        # fields inferred from the "Res: " columns
+df = se.read_oncoshot("data.csv")   # every cell read as text, file checked
+report = se.evaluate(df, types={"Has metastasis": "binary",
+                                "Histology": "scalar",
+                                "Treatment Drugs": "list"})
 print(report.metrics)           # field x confidence x metric, with intervals
 print(report.pivot())           # wide view of the point estimates
 report.to_csv("results/")       # metrics.csv and cases.csv
@@ -41,9 +43,19 @@ Python 3.11 or later, pandas 2 and numpy are required.
 
 Every interval carries the `method` that produced it (`wilson`, `bca` or `count`).
 
+## Scoring rules
+
+The rules are those of the R package, documented in `?score` and `?read_oncoshot`.
+
+- Declare each field's type with `types=`. Without it the type is inferred, and a column that could be binary or not (0/1, or TRUE/FALSE with `-`) raises an error.
+- White space is trimmed and collapsed, case is ignored, and plain decimals compare as numbers (`4` matches `4.0`). Codes such as `007`, forms such as `1e3`, and `NaN` stay text.
+- `-`, an en or em dash, and `null`, `none`, `NA` and `N/A` in any case mean an empty value. `unknown` and the text `NaN` are values.
+- Specificity and accuracy are reported for binary and scalar fields, not for list fields. F1 is computed from the counts, so it is 0 when the model returns nothing for a field with reference values.
+- A binary value outside TRUE/FALSE, a malformed bracket list, or a malformed file raises an error.
+
 ## Cross-check with R
 
-`../structeval-r/tests/fixtures/make_crosscheck_python.py` runs this implementation on the shared fixture and writes the values that the R test suite compares against, to a tolerance of 1e-12.
+`../structeval-r/tests/fixtures/make_crosscheck_python.py` runs this implementation on the two shared fixtures and writes the values that the R test suite compares against, to a tolerance of 1e-12.
 
 ## Licence
 

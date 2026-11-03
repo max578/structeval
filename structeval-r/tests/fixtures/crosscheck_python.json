@@ -2,374 +2,440 @@
  "fields": {
   "First Primary Diagnosis": {
    "estimates": {
-    "f1": 0.7551020408163266,
+    "accuracy": 0.7288135593220338,
+    "f1": 0.7551020408163265,
     "precision": 0.74,
-    "recall": 0.7708333333333334
+    "recall": 0.7708333333333334,
+    "specificity": 0.5454545454545454
    },
    "per_note": {
     "1": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "10": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "11": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "12": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "13": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "14": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "15": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "16": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "17": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "18": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "19": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "2": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "20": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "21": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "22": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "23": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "24": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "25": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "26": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "27": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "28": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "29": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "3": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "30": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "31": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "32": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "33": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "34": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "35": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "36": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "37": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "38": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "39": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "4": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "40": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "41": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "42": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "43": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "44": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "45": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "46": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "47": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "48": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "49": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "5": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "50": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "51": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "52": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "53": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "54": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "55": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "56": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "57": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "58": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "59": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "6": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "60": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "7": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "9": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     }
    },
    "totals": {
     "cor": 37,
     "inc": 8,
     "mis": 3,
-    "spu": 5
+    "spu": 5,
+    "tn": 6
    },
    "type": "scalar",
    "wilson": {
+    "accuracy": [
+     0.6040223703245485,
+     0.8256302906208194
+    ],
     "precision": [
      0.6044684273515117,
      0.8412847250644762
@@ -377,379 +443,449 @@
     "recall": [
      0.6346073590999656,
      0.8669217373308876
+    ],
+    "specificity": [
+     0.2800915374093221,
+     0.7872872837754024
     ]
    }
   },
   "First Primary Histology": {
    "estimates": {
+    "accuracy": 0.711864406779661,
     "f1": 0.6904761904761905,
     "precision": 0.725,
-    "recall": 0.6590909090909091
+    "recall": 0.6590909090909091,
+    "specificity": 0.8666666666666667
    },
    "per_note": {
     "1": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "10": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "11": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "12": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "13": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "14": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "15": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "16": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "17": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "18": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "19": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "2": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "20": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "21": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "22": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "23": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "24": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "25": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "26": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "27": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "28": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "29": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "3": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "30": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "31": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "32": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "33": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "34": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "35": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "36": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "37": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "38": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "39": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "4": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "40": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "41": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "42": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "43": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "44": {
      "cor": 0,
      "inc": 1,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "45": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "46": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "47": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "48": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "49": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "5": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "50": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "51": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "52": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "53": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "54": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "55": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "56": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "57": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "58": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "59": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "60": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "7": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "8": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "9": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     }
    },
    "totals": {
     "cor": 29,
     "inc": 9,
     "mis": 6,
-    "spu": 2
+    "spu": 2,
+    "tn": 13
    },
    "type": "scalar",
    "wilson": {
+    "accuracy": [
+     0.5861915342706008,
+     0.811635003641777
+    ],
     "precision": [
      0.5716504419378944,
      0.8389198375233266
@@ -757,13 +893,17 @@
     "recall": [
      0.5113914121793824,
      0.7812418048065554
+    ],
+    "specificity": [
+     0.6211801716767765,
+     0.9626387408969347
     ]
    }
   },
   "Has metastasis": {
    "estimates": {
     "accuracy": 0.7627118644067796,
-    "f1": 0.7812499999999999,
+    "f1": 0.78125,
     "precision": 0.8064516129032258,
     "recall": 0.7575757575757576,
     "specificity": 0.7692307692307693
@@ -1161,278 +1301,324 @@
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "10": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "12": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "13": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "14": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "16": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "17": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "18": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "2": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "20": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "21": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "22": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "24": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "25": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "26": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "28": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "29": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "30": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "32": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "33": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "34": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "36": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "37": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "38": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "4": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "40": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "41": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "42": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "44": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "45": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "46": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "48": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "49": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "5": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "50": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "52": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "53": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "54": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "56": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "57": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "58": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "6": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "60": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "8": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "9": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     }
    },
    "totals": {
     "cor": 0,
     "inc": 0,
     "mis": 0,
-    "spu": 0
+    "spu": 0,
+    "tn": 45
    },
    "type": "list",
    "wilson": {
@@ -1452,7 +1638,7 @@
   },
   "Treatment Drugs": {
    "estimates": {
-    "f1": 0.7891891891891891,
+    "f1": 0.7891891891891892,
     "precision": 0.7934782608695652,
     "recall": 0.7849462365591398
    },
@@ -1461,362 +1647,422 @@
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "10": {
      "cor": 0,
      "inc": 0,
      "mis": 2,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "11": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "12": {
      "cor": 3,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "13": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "14": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "15": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "16": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "17": {
      "cor": 2,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "18": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "19": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "2": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "20": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "21": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "22": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "23": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "24": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "25": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "26": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "27": {
      "cor": 2,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "28": {
      "cor": 3,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "29": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "3": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "30": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "31": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "32": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "33": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "34": {
      "cor": 4,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "35": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "36": {
      "cor": 4,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "37": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "38": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "39": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "4": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "40": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "41": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "42": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "43": {
      "cor": 2,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "44": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "45": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "46": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "47": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "48": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "49": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "5": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 1
     },
     "50": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "51": {
      "cor": 4,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "52": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "53": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "54": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "55": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "56": {
      "cor": 1,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "57": {
      "cor": 1,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "58": {
      "cor": 3,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "59": {
      "cor": 2,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "6": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     },
     "60": {
      "cor": 3,
      "inc": 0,
      "mis": 0,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "7": {
      "cor": 0,
      "inc": 0,
      "mis": 1,
-     "spu": 0
+     "spu": 0,
+     "tn": 0
     },
     "8": {
      "cor": 0,
      "inc": 0,
      "mis": 0,
-     "spu": 1
+     "spu": 1,
+     "tn": 0
     }
    },
    "totals": {
     "cor": 73,
     "inc": 0,
     "mis": 20,
-    "spu": 19
+    "spu": 19,
+    "tn": 6
    },
    "type": "list",
    "wilson": {

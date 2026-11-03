@@ -65,6 +65,7 @@ power_threshold <- function(n, theta0, theta1, m = 1, rho = 0,
   if (is.null(metric)) {
     metric <- if (type == "list") "f1" else "recall"
   }
+  .check_metric_type(metric, type)
   start <- proc.time()[["elapsed"]]
 
   # Simulation loop -----------------------------------------------------------
@@ -193,6 +194,7 @@ power_paired <- function(n, theta_a = 0.9, delta_logit, kappa = 0.5, m = 2,
   if (is.null(metric)) {
     metric <- if (type == "list") "f1" else "recall"
   }
+  .check_metric_type(metric, type)
   start <- proc.time()[["elapsed"]]
   res <- .with_seed(seed, {
     signs <- if (method == "signflip") .sign_matrix(n, n_perm) else NULL

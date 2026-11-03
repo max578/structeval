@@ -17,9 +17,11 @@ def test_is_unlabeled(v, exp):
 
 
 def test_normalize_numeric_and_case():
-    assert normalize("4") == 4.0
+    # 0.1.1: plain decimals get one canonical text form; no float() coercion
+    assert normalize("4") == "4"
+    assert normalize("4.0") == "4"
     assert normalize("  Female ") == "female"
-    assert normalize(7) == 7
+    assert normalize(7) == "7"
 
 
 def test_to_set_unifies_scalar_and_list():
@@ -27,7 +29,7 @@ def test_to_set_unifies_scalar_and_list():
     assert to_set(["Apple", "banana", "apple"]) == {"apple", "banana"}
     assert to_set("-") == set()
     assert to_set([]) == set()
-    assert to_set("4") == {4.0}
+    assert to_set("4") == {"4"}
 
 
 def test_parse_listish():

@@ -79,9 +79,11 @@ test_that("a field absent in every note gives NA metrics with a warning", {
     m <- metrics(s, field = "absent"),
     "'precision', 'recall', 'f1' undefined for field 'absent'"
   )
-  expect_true(all(is.na(m$estimate[m$metric != "specificity"])))
-  expect_equal(m$estimate[m$metric == "specificity"], 1)
-  expect_equal(nrow(m), 4L)
+  # List fields report no specificity (0.1.1, base paper Table 1).
+  expect_true(all(is.na(m$estimate)))
+  expect_equal(m$metric, c("precision", "recall", "f1"))
+  expect_error(metrics(s, field = "absent", metric = "specificity"),
+    "not defined for list")
 })
 
 test_that("a field with no labelled row is reported, never dropped", {

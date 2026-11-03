@@ -31,8 +31,10 @@ test_that("an all-correct list field takes the boundary rule, never zero width",
     expect_true(m$boundary)
     expect_equal(m$estimate, 1)
     expect_gt(m$upper - m$lower, 0)
+    # Wilson on notes, the cap for every sample on these notes (0.1.1).
     w <- structeval:::.wilson_ci(30, 30, 0.95)
-    expect_equal(c(m$lower, m$upper), unname(c(w[, 1], w[, 2])))
+    expect_equal(m$lower, unname(w[, 1]))
+    expect_equal(m$upper, 1)
   }
 })
 

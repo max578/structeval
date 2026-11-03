@@ -50,6 +50,13 @@ the note where the field is present, so \code{n_present = n_units}. For
 \code{n_present = ceiling(n_items / m)}. In both cases
 \code{n_notes = ceiling(n_present / prevalence)}. All arguments are
 vectorised.
+
+The design effect assumes \code{m} items in every note. When note sizes vary
+and \code{rho > 0}, the planned \code{n} can fall short of the requested power: in
+a simulation of 10,000 replicates per design with 1 + Poisson(m - 1)
+items per note, list recall at the planned \code{n} had power 0.71 to 0.79
+against a target of 0.80 for \code{rho} from 0.2 to 0.5. Check the planned
+\code{n} with \code{\link[=power_threshold]{power_threshold()}} before fixing the sample size.
 }
 \examples{
 n_threshold(0.90, 0.95)

@@ -94,6 +94,15 @@
   stats::quantile(rs, q, type = 7, names = FALSE)
 }
 
+# Boundary cap for the cluster methods on n_notes notes: the lower bound never
+# exceeds the perfect record's (Wilson, n_notes successes in n_notes trials)
+# and the upper bound is never below the empty record's (0 successes), so a
+# sample with fewer correct items never certifies more than a perfect one.
+.cap_ci <- function(ci, n_notes, level) {
+  w <- .wilson_ci(c(n_notes, 0), n_notes, level)
+  c(min(ci[[1L]], w[1L, "lower"]), max(ci[[2L]], w[2L, "upper"]))
+}
+
 # Choose the interval method for method = "auto" (spec section 4).
 .route_method <- function(b, method) {
   if (method != "auto") {
@@ -174,6 +183,8 @@ ratio_ci <- function(a, b, method = "wilson", level = 0.95, B = 2000L,
     # Boundary rule: the clusters are the trials.
     out$boundary <- TRUE
     ci <- .wilson_ci(round(r * n_notes), n_notes, level)
+  } else if (method %in% c("cluster_bca", "cluster_delta")) {
+    ci <- .cap_ci(ci, n_notes, level)
   }
   out$lower <- ci[[1L]]
   out$upper <- ci[[2L]]

@@ -20,7 +20,7 @@ remotes::install_github("max578/structeval", subdir = "structeval-r")
 From the built source package:
 
 ```r
-install.packages("structeval_0.1.0.tar.gz", repos = NULL, type = "source")
+install.packages("structeval_0.1.1.tar.gz", repos = NULL, type = "source")
 ```
 
 ## Example
@@ -46,7 +46,7 @@ n_threshold(theta0 = 0.90, theta1 = 0.95, m = 4, rho = 0.2)
 | `test_paired()` | Do two systems differ on the same notes? | cluster delta, cluster BCa, sign flip, McNemar |
 | `test_asymmetry()` | Are missed and spurious items balanced? | sign flip, cluster t, binomial |
 | `n_threshold()` | How many notes certify a threshold? | closed form with design effect |
-| `n_paired()` | How many notes detect a paired difference? | McNemar (Connor 1987) |
+| `n_paired()` | How many notes detect a paired difference? | exact McNemar, searched up from Connor (1987) |
 
 `power_threshold()`, `power_paired()` and `power_asymmetry()` give Monte
 Carlo power from `simulate_counts()`. `min_certifiable()` gives the smallest

@@ -29,7 +29,8 @@ def test_binary_undefined_recall_is_nan():
     m = binary_metrics(tp=0, fp=3, fn=0, tn=0)
     assert m["precision"] == 0.0
     assert math.isnan(m["recall"])
-    assert math.isnan(m["f1"])
+    # 0.1.1: F1 from counts, 2TP/(2TP+FP+FN), as in the R package
+    assert m["f1"] == 0.0
 
 
 def test_set_metrics_incorrect_counts_in_both_denominators():

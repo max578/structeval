@@ -6,6 +6,7 @@
 wilson_ci <- structeval:::.wilson_ci
 delta_se_logit <- structeval:::.delta_se_logit
 bca_interval <- structeval:::.bca_interval
+cap_ci <- structeval:::.cap_ci
 sim_core <- structeval:::.sim_core
 mat_ab <- structeval:::.mat_ab
 t2_core <- structeval:::.t2_core
@@ -121,7 +122,7 @@ eval_intervals <- function(a, b, type, B, level = 0.95) {
     out[1:2, "cluster_bca"] <- fallback
     out[3, "cluster_bca"] <- 1
   } else {
-    out[1:2, "cluster_bca"] <- ci
+    out[1:2, "cluster_bca"] <- cap_ci(ci, nn, level)
     out[3, "cluster_bca"] <- 0
   }
 
@@ -129,8 +130,8 @@ eval_intervals <- function(a, b, type, B, level = 0.95) {
     se <- delta_se_logit(a, b, r)
     if (is.finite(se) && se > 0) {
       z <- stats::qnorm(1 - (1 - level) / 2)
-      out[1:2, "cluster_delta"] <- stats::plogis(stats::qlogis(r) +
-        c(-1, 1) * z * se)
+      out[1:2, "cluster_delta"] <- cap_ci(stats::plogis(stats::qlogis(r) +
+        c(-1, 1) * z * se), nn, level)
       out[3, "cluster_delta"] <- 0
     } else {
       out[1:2, "cluster_delta"] <- fallback

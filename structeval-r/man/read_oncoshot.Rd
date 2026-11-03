@@ -30,14 +30,27 @@ note, a column \verb{<field>} with the reference value and a column
 long table that \code{\link[=score]{score()}} consumes, with one row per note and field.
 }
 \details{
-Cell conventions follow the source format. A blank cell is unlabelled and
-becomes \code{NA} (the row is skipped by \code{\link[=score]{score()}}). The value \code{"-"} means the
-note holds no information and becomes \code{character(0)}. List cells may be
-comma-separated (\code{"a, b"}) or written as a bracketed list of quoted items
-(\code{"['a', 'b']"}); \code{"[]"} is the empty list. Scalar and binary cells hold
-one value. Normalisation (trimming, case folding, collapsing internal
-whitespace) is applied by \code{\link[=score]{score()}}, so the long table keeps the values as
-written.
+Cell conventions follow the source format. A blank cell (empty or only
+white space) is unlabelled and becomes \code{NA} (the row is skipped by
+\code{\link[=score]{score()}}). The value \code{"-"}, or an en or em dash, means the note holds no
+information and becomes \code{character(0)}. List cells may be
+comma-separated (\code{"a, b"}) or written as a bracketed list (\code{"['a', 'b']"},
+the syntax of a Python list of strings); \code{"[]"} is the empty list. In a
+bracketed list either every item is quoted, with \verb{'} or \verb{"} and the
+escapes \verb{\\'}, \verb{\\"} and \verb{\\\\}, or no item is (\code{"[a, b]"}). Blank items are
+dropped. Anything else, such as a mix of quoted and bare items or text
+after the closing bracket, stops with the cell named. A bracketed cell
+in a scalar or binary column is read the same way. Normalisation
+(white space, case, numbers, null tokens) is applied by \code{\link[=score]{score()}}, so the
+long table keeps the values as written.
+
+The file is checked before it is parsed, and each check stops with a
+named error: every line must be valid UTF-8; every record must have as
+many fields as the header (an unquoted comma in a cell would otherwise
+shift the columns); a warning from the CSV parser, such as an
+unterminated quote, stops the read; the identifier, reference and
+prediction columns must each appear once; note identifiers must be
+non-empty and unique.
 }
 \examples{
 csv <- tempfile(fileext = ".csv")

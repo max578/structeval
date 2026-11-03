@@ -24,10 +24,26 @@
 #' @keywords internal
 .default_metrics <- function(type) {
   if (type == "list") {
-    c("precision", "recall", "f1", "specificity")
+    c("precision", "recall", "f1")
   } else {
     c("precision", "recall", "f1", "specificity", "accuracy")
   }
+}
+
+#' Stop when a metric is not defined for list fields
+#' @noRd
+#' @keywords internal
+.check_metric_type <- function(metric, type, field = NULL) {
+  if (identical(type, "list") && metric %in% c("specificity", "accuracy")) {
+    stop(
+      if (metric == "accuracy") "Accuracy" else "Specificity",
+      " is not defined for list ",
+      if (is.null(field)) "fields" else paste0("field '", field, "'"),
+      ": a list field has no note-level negative class (base paper Table 1).",
+      call. = FALSE
+    )
+  }
+  invisible(TRUE)
 }
 
 #' Field table of a counts frame (keeps fields with no scored rows)
@@ -74,6 +90,8 @@
 #' @noRd
 #' @keywords internal
 .field_ab <- function(counts, field, metric) {
+  fields <- .field_table(counts)
+  .check_metric_type(metric, fields$type[match(field, fields$field)], field)
   rows <- counts[counts$field == field, , drop = FALSE]
   ab <- .metric_ab(rows$cor, rows$inc, rows$mis, rows$spu, rows$tn, metric)
   ab$note <- rows$note
@@ -99,8 +117,18 @@
 #' | accuracy | cor + tn | cor + tn + inc + mis + spu |
 #' | mis_share | mis | mis + spu |
 #'
-#' F1 computed this way equals \eqn{2PR/(P+R)}. Accuracy applies to binary
-#' and scalar fields. Specificity is a note-level proportion for every type.
+#' F1 is computed from the counts as \eqn{2C/(2C + M + S + 2I)}. It equals
+#' the harmonic mean \eqn{2PR/(P+R)} whenever precision and recall are both
+#' defined. When the model returns nothing for a field with reference
+#' values, precision is undefined (`NA`) while recall and F1 are 0, the
+#' convention of scikit-learn's `f1_score()`.
+#'
+#' Specificity is the share of notes with an empty (binary: negative)
+#' reference in which the model also returned nothing (binary: a negative).
+#' Specificity and accuracy apply to binary and scalar fields only. A list
+#' field has no note-level negative class, so requesting either for a list
+#' field stops with an error, as the base paper reports neither for list
+#' fields. The `tn` count of a list field is kept for reference.
 #'
 #' With `method = "auto"`, a metric whose note-level denominators are all 0
 #' or 1 (binary and scalar precision, recall, specificity and accuracy) gets
@@ -111,7 +139,13 @@
 #' estimate is 0 or 1, the bootstrap distribution has no spread, or the
 #' acceleration is undefined, the interval is the Wilson interval on
 #' `round(R * n_notes)` successes in `n_notes` trials (the notes are the
-#' trials) and `boundary` is `TRUE`. No zero-width interval is returned. For
+#' trials) and `boundary` is `TRUE`. Every other `cluster_bca` and
+#' `cluster_delta` interval is capped: its lower bound is never above the
+#' Wilson lower bound of a perfect record on the same notes (`n_notes`
+#' successes in `n_notes` trials), and its upper bound is never below the
+#' Wilson upper bound of an empty record (no successes). A sample with
+#' errors therefore never certifies more than a perfect record on the same
+#' notes. No zero-width interval is returned. For
 #' `percentile`, `boundary` flags the same condition but the percentile
 #' interval is returned unchanged, so its failure stays visible.
 #'
@@ -121,8 +155,8 @@
 #' @param counts Counts from [score()] or [simulate_counts()].
 #' @param field Fields to report. `NULL` reports every field.
 #' @param metric Metrics to report. `NULL` reports the default set for each
-#'   field type: precision, recall, F1 and specificity, plus accuracy for
-#'   binary and scalar fields. `"mis_share"` is also available.
+#'   field type: precision, recall and F1, plus specificity and accuracy
+#'   for binary and scalar fields. `"mis_share"` is also available.
 #' @param method Interval method: `"auto"` (the router described in
 #'   Details), `"wilson"`, `"naive_wilson"` (Wilson on the pooled item counts,
 #'   which treats items as independent), `"cluster_bca"`, `"cluster_delta"`
@@ -136,7 +170,8 @@
 #' @returns A data frame with one row per field and metric and columns
 #'   `field`, `type`, `metric`, `estimate`, `lower`, `upper`, `method`, `k`
 #'   (\eqn{\sum a_i}), `n` (\eqn{\sum b_i}), `n_notes` (notes with
-#'   \eqn{b_i > 0}) and `boundary`.
+#'   \eqn{b_i > 0}) and `boundary`. The attribute `coverage` of the counts
+#'   from [score()], if present, is carried over.
 #'
 #' @references
 #' Wilson, E. B. (1927). Probable inference, the law of succession, and
@@ -177,11 +212,8 @@ metrics <- function(counts, field = NULL, metric = NULL, method = "auto",
       f <- fields$field[i]
       type <- fields$type[i]
       wanted <- if (is.null(metric)) .default_metrics(type) else metric
-      if (type == "list" && "accuracy" %in% wanted) {
-        stop(
-          "Accuracy is not defined for list field '", f, "'.",
-          call. = FALSE
-        )
+      for (m in wanted) {
+        .check_metric_type(m, type, f)
       }
       undefined <- character(0)
       for (m in wanted) {
@@ -211,5 +243,6 @@ metrics <- function(counts, field = NULL, metric = NULL, method = "auto",
   })
   out <- do.call(rbind, rows)
   rownames(out) <- NULL
+  attr(out, "coverage") <- attr(counts, "coverage")
   out
 }

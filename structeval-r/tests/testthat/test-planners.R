@@ -20,10 +20,11 @@ test_that("n_threshold gives 239 units and DEFF 1.6 at m = 4, rho = 0.2", {
   expect_error(n_threshold(0.95, 0.90), "greater than")
 })
 
-test_that("n_paired follows the Connor formula", {
+test_that("n_paired starts from the Connor formula", {
   np <- n_paired(0.05, 0.10)
   z <- qnorm(0.975) * sqrt(0.10) + qnorm(0.80) * sqrt(0.10 - 0.05^2)
-  expect_identical(np$n_present, as.integer(ceiling(z^2 / 0.05^2)))
+  expect_identical(np$n_connor, as.integer(ceiling(z^2 / 0.05^2)))
+  expect_gte(np$n_present, np$n_connor)
   expect_error(n_paired(0.4, 0.1), "exceed")
 })
 

@@ -45,7 +45,8 @@ items as often as it adds spurious ones.
 \item \code{signflip}: random sign flips of \eqn{d_i} over every scored note of
 the field, two-sided. Exact under within-note symmetry of the two error
 labels.
-\item \code{cluster_t}: one-sample t test on \eqn{d_i}.
+\item \code{cluster_t}: one-sample t test on \eqn{d_i}; \code{NA} with a warning when
+the field has fewer than two notes or constant non-zero differences.
 \item \code{binomial}: exact binomial test of \eqn{\sum mis} out of
 \eqn{\sum mis + \sum spu} against 0.5. Items are treated as independent;
 this is the naive comparison method.

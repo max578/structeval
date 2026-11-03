@@ -62,7 +62,10 @@ cluster-robust logit test
 \eqn{z = (\mathrm{logit} R - \mathrm{logit}\,\theta_0)/SE_{logit}}; for
 \code{cluster_bca} and \code{percentile} this p-value comes from the
 \code{cluster_delta} variance and the \code{method} column says so. At the
-boundary the score test on notes as trials is used.
+boundary the score test on notes as trials is used. Under \code{cluster_bca}
+or \code{cluster_delta} the p-value is never below that score test for a
+perfect record on the same notes, in line with the boundary cap of
+\code{\link[=metrics]{metrics()}}, and the \code{method} column then reads \verb{(p: boundary cap)}.
 }
 \examples{
 counts <- simulate_counts(n = 200, theta = 0.95, type = "proportion",

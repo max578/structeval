@@ -1,6 +1,6 @@
 Package: structeval
 Title: Structure-Aware Evaluation of Extracted Clinical Fields
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:
     person("Max", "Moldovan", , "max.moldovan@adelaide.edu.au", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-9680-8474"))

@@ -20,19 +20,29 @@ at 0.05).}
 \item{prevalence}{Proportion of notes where the field is present.}
 }
 \value{
-A data frame with the inputs and \code{n_present} and \code{n_notes}.
+A data frame with the inputs, \code{n_connor} (Connor's formula),
+\code{n_present}, \code{exact_power} (the exact power at \code{n_present}) and
+\code{n_notes}.
 }
 \description{
-The number of notes for McNemar's test to detect a difference in a
-note-level proportion between two systems scored on the same notes
-(Connor 1987).
+The number of notes for the exact McNemar test of \code{\link[=test_paired]{test_paired()}} to
+detect a difference in a note-level proportion between two systems
+scored on the same notes.
 }
 \details{
-\deqn{n = \left\lceil \frac{[z_{1-\alpha}\sqrt{\psi} +
+The search starts from the asymptotic formula of Connor (1987),
+\deqn{n_C = \left\lceil \frac{[z_{1-\alpha}\sqrt{\psi} +
 z_{power}\sqrt{\psi - \delta^2}]^2}{\delta^2} \right\rceil,}
 where \eqn{\psi} is the proportion of discordant notes and \eqn{\delta}
-the difference in proportions. The result is divided by \code{prevalence}.
-Item-level paired designs are planned with \code{\link[=power_paired]{power_paired()}}.
+the difference in proportions. Connor's formula is asymptotic and gives
+too few notes for the exact conditional test, so \code{n_present} is the first
+\eqn{n \ge n_C} at which the exact power reaches \code{power}. The exact power
+sums, over the number of discordant notes \eqn{D \sim Bin(n, \psi)}, the
+probability that the exact binomial test of the discordant split rejects
+at the two-sided level \eqn{2\alpha}. Exact power is not monotone in
+\eqn{n}, so a slightly larger \eqn{n} can have slightly lower power.
+The result is divided by \code{prevalence}. Item-level paired designs are
+planned with \code{\link[=power_paired]{power_paired()}}.
 }
 \examples{
 n_paired(delta = 0.05, discordance = 0.10)
